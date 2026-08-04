@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-outfit: 'Plus Jakarta Sans', 'Outfit', sans-serif;
+}
+
+body {
+  font-family: var(--font-outfit);
+  background-color: #FFFFFF;
+  color: #1C1917;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* Light & White Glassmorphism & Card Styles */
+.glass-card {
+  background: #FFFFFF;
+  border: 1px solid #E7E5E4;
+  box-shadow: 0 4px 20px -2px rgba(28, 25, 23, 0.06);
+}
+
+.glass-card-hover {
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card-hover:hover {
+  transform: translateY(-4px);
+  border-color: #D97706;
+  box-shadow: 0 12px 30px -4px rgba(217, 119, 6, 0.15);
+}
+
+.glass-nav {
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid #E7E5E4;
+}
+
+/* Warm Gradient Text for White Background */
+.text-gradient-vibrant,
+.text-gradient-warm {
+  background: linear-gradient(135deg, #D97706 0%, #B45309 50%, #92400E 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-orange,
+.text-gradient-terracotta {
+  background: linear-gradient(135deg, #EA580C 0%, #C2410C 50%, #9A3412 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Warm & Inviting Buttons */
+.btn-vibrant-primary,
+.btn-warm-primary {
+  background: linear-gradient(135deg, #D97706 0%, #B45309 100%);
+  color: #FFFFFF;
+  font-weight: 700;
+  border-radius: 9999px;
+  box-shadow: 0 4px 18px rgba(217, 119, 6, 0.25);
+  transition: all 0.3s ease;
+}
+
+.btn-vibrant-primary:hover,
+.btn-warm-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(217, 119, 6, 0.35);
+  filter: brightness(1.05);
+}
+
+.btn-vibrant-orange,
+.btn-warm-terracotta {
+  background: linear-gradient(135deg, #EA580C 0%, #C2410C 100%);
+  color: #FFFFFF;
+  font-weight: 700;
+  border-radius: 9999px;
+  box-shadow: 0 4px 18px rgba(234, 88, 12, 0.25);
+  transition: all 0.3s ease;
+}
+
+.btn-vibrant-orange:hover,
+.btn-warm-terracotta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(234, 88, 12, 0.35);
+  filter: brightness(1.05);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #FAF9F6;
+}
+::-webkit-scrollbar-thumb {
+  background: #D6D3D1;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #D97706;
+}
+
+@keyframes spin-slow {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 30s linear infinite;
+}
