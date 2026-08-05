@@ -38,9 +38,9 @@ export default function LGServiceBangalorePage() {
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
           <div className="space-y-2">
             <div className="flex items-center gap-3">
-              {/* Exact High-Res LG Logo Asset */}
+              {/* Optimized WebP LG Logo Asset */}
               <img
-                src="/lg-logo.png"
+                src="/lg-logo.webp"
                 alt="LG Electronics Logo"
                 className="h-14 sm:h-16 w-auto object-contain shrink-0"
               />
