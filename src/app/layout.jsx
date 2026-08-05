@@ -1,7 +1,5 @@
 import './globals.css';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
-import FloatingContactButtons from '@/components/FloatingContactButtons';
+import LayoutContent from '@/components/LayoutContent';
 
 export const metadata = {
   title: 'Smart Touch Appliances | Home Appliance Repair & Certified Refurbished Store Bangalore',
@@ -21,10 +19,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className="scroll-smooth">
       <body className="bg-white text-stone-900 min-h-screen flex flex-col font-sans antialiased selection:bg-amber-100 selection:text-amber-900">
-        <Navbar />
-        <main className="flex-grow">{children}</main>
-        <Footer />
-        <FloatingContactButtons />
+        <LayoutContent>{children}</LayoutContent>
       </body>
     </html>
   );

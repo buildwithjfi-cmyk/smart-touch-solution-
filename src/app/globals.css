@@ -29,8 +29,8 @@ body {
 
 .glass-card-hover:hover {
   transform: translateY(-4px);
-  border-color: #D97706;
-  box-shadow: 0 12px 30px -4px rgba(217, 119, 6, 0.15);
+  border-color: #0284C7;
+  box-shadow: 0 12px 30px -4px rgba(2, 132, 199, 0.15);
 }
 
 .glass-nav {
@@ -40,7 +40,7 @@ body {
   border-bottom: 1px solid #E7E5E4;
 }
 
-/* Warm Gradient Text for White Background */
+/* Gradient Text Utilities */
 .text-gradient-vibrant,
 .text-gradient-warm {
   background: linear-gradient(135deg, #D97706 0%, #B45309 50%, #92400E 100%);
@@ -55,7 +55,14 @@ body {
   -webkit-text-fill-color: transparent;
 }
 
-/* Warm & Inviting Buttons */
+.text-gradient-blue,
+.text-gradient-sapphire {
+  background: linear-gradient(135deg, #0284C7 0%, #1D4ED8 50%, #1E40AF 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Warm & Blue Primary Buttons */
 .btn-vibrant-primary,
 .btn-warm-primary {
   background: linear-gradient(135deg, #D97706 0%, #B45309 100%);
@@ -70,6 +77,21 @@ body {
 .btn-warm-primary:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 24px rgba(217, 119, 6, 0.35);
+  filter: brightness(1.05);
+}
+
+.btn-blue-primary {
+  background: linear-gradient(135deg, #0284C7 0%, #1D4ED8 100%);
+  color: #FFFFFF;
+  font-weight: 700;
+  border-radius: 9999px;
+  box-shadow: 0 4px 18px rgba(2, 132, 199, 0.25);
+  transition: all 0.3s ease;
+}
+
+.btn-blue-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(2, 132, 199, 0.35);
   filter: brightness(1.05);
 }
 
@@ -98,11 +120,11 @@ body {
   background: #FAF9F6;
 }
 ::-webkit-scrollbar-thumb {
-  background: #D6D3D1;
+  background: #CBD5E1;
   border-radius: 5px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #D97706;
+  background: #0284C7;
 }
 
 @keyframes spin-slow {

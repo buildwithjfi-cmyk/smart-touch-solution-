@@ -19,6 +19,9 @@ module.exports = {
           amber: "#D97706",
           gold: "#B45309",
           orange: "#EA580C",
+          blue: "#0284C7",
+          royal: "#1D4ED8",
+          sky: "#E0F2FE",
           green: "#059669",
         },
       },
@@ -28,6 +31,7 @@ module.exports = {
       animation: {
         'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
         'float': 'float 6s ease-in-out infinite',
+        'spin-slow': 'spin 30s linear infinite',
       },
       keyframes: {
         float: {
