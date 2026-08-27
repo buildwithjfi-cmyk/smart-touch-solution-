@@ -4,7 +4,7 @@ import RepairCostEstimator from '@/components/RepairCostEstimator';
 
 export const metadata = {
   title: 'Microwave Oven Repair Bangalore | Solo, Grill & Convection Fix',
-  description: 'Fast doorstep microwave oven repair in Bangalore. Fix magnetron heating, touchpad buttons, internal sparks, and turntable motor. Call +91 99862 07964.',
+  description: 'Fast doorstep microwave oven repair in Bangalore. Fix magnetron heating, touchpad buttons, internal sparks, and turntable motor. Call +91 99162 07964.',
 };
 
 export default function MicrowaveRepairPage() {
@@ -29,11 +29,11 @@ export default function MicrowaveRepairPage() {
               Expert doorstep repair for Solo, Grill, and Convection Microwave Ovens with genuine high-voltage transformers and magnetrons.
             </p>
             <div className="pt-2 flex justify-center gap-4">
-              <a href="tel:+919986207964" className="btn-blue-primary px-8 py-3.5 text-sm font-extrabold flex items-center gap-2">
+              <a href="tel:+919916207964" className="btn-blue-primary px-8 py-3.5 text-sm font-extrabold flex items-center gap-2">
                 <Phone className="w-4 h-4 fill-white" />
-                <span>Call +91 99862 07964</span>
+                <span>Call +91 99162 07964</span>
               </a>
-              <a href="https://wa.me/919986207964?text=Hi%20Smart%20Touch%20Appliances,%20I%20need%20microwave%20repair" target="_blank" rel="noopener noreferrer" className="bg-emerald-700 text-white font-extrabold px-8 py-3.5 rounded-full text-sm flex items-center gap-2">
+              <a href="https://wa.me/919916207964?text=Hi%20Smart%20Touch%20Appliances,%20I%20need%20microwave%20repair" target="_blank" rel="noopener noreferrer" className="bg-emerald-700 text-white font-extrabold px-8 py-3.5 rounded-full text-sm flex items-center gap-2">
                 <MessageSquare className="w-4 h-4" />
                 <span>WhatsApp Booking</span>
               </a>

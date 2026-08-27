@@ -30,14 +30,14 @@ export default function Navbar() {
 
           <div className="flex items-center gap-4 text-xs font-semibold">
             <a 
-              href="tel:+919986207964" 
+              href="tel:+919916207964" 
               className="flex items-center gap-1.5 hover:underline bg-black/20 px-3 py-1 rounded-full border border-white/20 transition-all hover:bg-black/30"
             >
               <Phone className="w-3.5 h-3.5 text-sky-200" />
-              <span>Call Hotline: +91 99862 07964</span>
+              <span>Call Hotline: +91 99162 07964</span>
             </a>
             <a 
-              href="https://wa.me/919986207964?text=Hi%20Smart%20Touch%20Appliances,%20I%20need%20a%20service%20booking" 
+              href="https://wa.me/919916207964?text=Hi%20Smart%20Touch%20Appliances,%20I%20need%20a%20service%20booking" 
               target="_blank"
               rel="noopener noreferrer"
               className="hidden md:flex items-center gap-1.5 hover:underline bg-emerald-700 px-3 py-1 rounded-full border border-emerald-500/40 transition-all hover:bg-emerald-800"
@@ -255,11 +255,11 @@ export default function Navbar() {
           {/* Call-to-action Button */}
           <div className="hidden sm:flex items-center gap-3">
             <a
-              href="tel:+919986207964"
+              href="tel:+919916207964"
               className="btn-blue-primary px-5 py-2.5 text-xs sm:text-sm flex items-center gap-2"
             >
               <Phone className="w-4 h-4 fill-white" />
-              <span>+91 99862 07964</span>
+              <span>+91 99162 07964</span>
             </a>
           </div>
 
@@ -379,14 +379,14 @@ export default function Navbar() {
 
             <div className="pt-2 flex flex-col gap-2">
               <a
-                href="tel:+919986207964"
+                href="tel:+919916207964"
                 className="btn-blue-primary py-3 text-center text-sm flex items-center justify-center gap-2"
               >
                 <Phone className="w-4 h-4 fill-white" />
-                <span>Call +91 99862 07964</span>
+                <span>Call +91 99162 07964</span>
               </a>
               <a
-                href="https://wa.me/919986207964?text=Hi%20Smart%20Touch%20Appliances,%20I%20need%20a%20service%20booking"
+                href="https://wa.me/919916207964?text=Hi%20Smart%20Touch%20Appliances,%20I%20need%20a%20service%20booking"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 text-center text-sm rounded-full flex items-center justify-center gap-2 transition-colors"

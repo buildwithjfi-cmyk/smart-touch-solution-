@@ -286,14 +286,14 @@ export default function ApplianceCatalog() {
             {/* Action Buttons */}
             <div className="p-5 pt-0 grid grid-cols-2 gap-2">
               <a
-                href={`tel:+919986207964`}
+                href={`tel:+919916207964`}
                 className="bg-stone-100 hover:bg-stone-200 text-stone-800 font-bold py-2.5 px-3 rounded-xl text-xs flex items-center justify-center gap-1.5 transition-colors border border-stone-200"
               >
                 <Phone className="w-3.5 h-3.5 text-amber-600" />
-                <span>Call +91 99862 07964</span>
+                <span>Call +91 99162 07964</span>
               </a>
               <a
-                href={`https://wa.me/919986207964?text=Hi%20Smart%20Touch%20Appliances,%20I%20am%20interested%20in%20${encodeURIComponent(product.name)}%20at%20${encodeURIComponent(product.price)}`}
+                href={`https://wa.me/919916207964?text=Hi%20Smart%20Touch%20Appliances,%20I%20am%20interested%20in%20${encodeURIComponent(product.name)}%20at%20${encodeURIComponent(product.price)}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-emerald-700 hover:bg-emerald-800 text-white font-bold py-2.5 px-3 rounded-xl text-xs flex items-center justify-center gap-1.5 transition-colors"

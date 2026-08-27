@@ -118,14 +118,14 @@ export default function AreaCheckerWidget() {
 
             <div className="flex items-center gap-3 w-full md:w-auto">
               <a
-                href="tel:+919986207964"
+                href="tel:+919916207964"
                 className="btn-warm-primary text-xs px-5 py-3 flex-1 md:flex-initial flex items-center justify-center gap-2"
               >
                 <Phone className="w-4 h-4 fill-white" />
-                <span>Call +91 99862 07964</span>
+                <span>Call +91 99162 07964</span>
               </a>
               <a
-                href={`https://wa.me/919986207964?text=Hi%20Smart%20Touch%20Appliances,%20I%20need%20a%20technician%20in%20${encodeURIComponent(searchResult.areaName)}`}
+                href={`https://wa.me/919916207964?text=Hi%20Smart%20Touch%20Appliances,%20I%20need%20a%20technician%20in%20${encodeURIComponent(searchResult.areaName)}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-emerald-700 hover:bg-emerald-800 text-white font-bold text-xs px-5 py-3 rounded-full flex-1 md:flex-initial flex items-center justify-center gap-2 transition-colors"

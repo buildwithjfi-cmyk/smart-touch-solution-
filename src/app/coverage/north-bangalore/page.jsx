@@ -3,7 +3,7 @@ import { MapPin, Phone, MessageSquare, CheckCircle2 } from 'lucide-react';
 
 export const metadata = {
   title: 'North Bangalore Appliance Repair | Hebbal, Yelahanka, Kalyan Nagar',
-  description: 'Doorstep repair for washing machines, fridges & ACs in North Bangalore including Hebbal, Yelahanka, Kalyan Nagar, RT Nagar & Thanisandra. Call +91 99862 07964.',
+  description: 'Doorstep repair for washing machines, fridges & ACs in North Bangalore including Hebbal, Yelahanka, Kalyan Nagar, RT Nagar & Thanisandra. Call +91 99162 07964.',
 };
 
 export default function NorthBangalorePage() {
@@ -24,9 +24,9 @@ export default function NorthBangalorePage() {
               Dedicated service response team covering Hebbal flyover belt, Yelahanka New Town, Kalyan Nagar & Thanisandra.
             </p>
             <div className="pt-2 flex justify-center gap-4">
-              <a href="tel:+919986207964" className="btn-blue-primary px-8 py-3.5 text-sm font-extrabold flex items-center gap-2">
+              <a href="tel:+919916207964" className="btn-blue-primary px-8 py-3.5 text-sm font-extrabold flex items-center gap-2">
                 <Phone className="w-4 h-4 fill-white" />
-                <span>Call +91 99862 07964</span>
+                <span>Call +91 99162 07964</span>
               </a>
             </div>
           </div>

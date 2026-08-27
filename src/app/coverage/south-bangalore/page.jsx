@@ -3,7 +3,7 @@ import { MapPin, Phone, MessageSquare, CheckCircle2 } from 'lucide-react';
 
 export const metadata = {
   title: 'South Bangalore Appliance Repair | Koramangala, Jayanagar, HSR, E-City',
-  description: 'Same-day doorstep washing machine, fridge & AC repair in South Bangalore covering Koramangala, HSR Layout, JP Nagar, Jayanagar & Electronic City. Call +91 99862 07964.',
+  description: 'Same-day doorstep washing machine, fridge & AC repair in South Bangalore covering Koramangala, HSR Layout, JP Nagar, Jayanagar & Electronic City. Call +91 99162 07964.',
 };
 
 export default function SouthBangalorePage() {
@@ -24,9 +24,9 @@ export default function SouthBangalorePage() {
               Expert technicians available 24/7 in Koramangala, HSR Layout, Jayanagar, and Electronic City with full diagnostic equipment.
             </p>
             <div className="pt-2 flex justify-center gap-4">
-              <a href="tel:+919986207964" className="btn-blue-primary px-8 py-3.5 text-sm font-extrabold flex items-center gap-2">
+              <a href="tel:+919916207964" className="btn-blue-primary px-8 py-3.5 text-sm font-extrabold flex items-center gap-2">
                 <Phone className="w-4 h-4 fill-white" />
-                <span>Call +91 99862 07964</span>
+                <span>Call +91 99162 07964</span>
               </a>
             </div>
           </div>

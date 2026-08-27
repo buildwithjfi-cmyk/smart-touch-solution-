@@ -12,7 +12,7 @@ const circularSteps = [
     icon: Phone,
     position: 'top-0 left-1/2 -translate-x-1/2 -translate-y-1/2',
     color: 'bg-amber-600',
-    detail: 'Call +91 99862 07964 or send a WhatsApp message to request doorstep repair or refurbished sales.'
+    detail: 'Call +91 99162 07964 or send a WhatsApp message to request doorstep repair or refurbished sales.'
   },
   {
     id: 2,

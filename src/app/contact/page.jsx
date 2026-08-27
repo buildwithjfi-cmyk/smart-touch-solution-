@@ -35,15 +35,15 @@ export default function ContactPage() {
             </h1>
 
             <p className="text-stone-600 text-base sm:text-xl leading-relaxed">
-              Book a background-verified engineer to visit your home in Bangalore within 60 minutes or reach our direct helpline at <strong className="text-stone-900">+91 99862 07964</strong>.
+              Book a background-verified engineer to visit your home in Bangalore within 60 minutes or reach our direct helpline at <strong className="text-stone-900">+91 99162 07964</strong>.
             </p>
 
             <div className="pt-2 flex justify-center gap-4">
-              <a href="tel:+919986207964" className="btn-blue-primary px-8 py-3.5 text-sm font-extrabold flex items-center gap-2">
+              <a href="tel:+919916207964" className="btn-blue-primary px-8 py-3.5 text-sm font-extrabold flex items-center gap-2">
                 <Phone className="w-4 h-4 fill-white" />
-                <span>Call Hotline: +91 99862 07964</span>
+                <span>Call Hotline: +91 99162 07964</span>
               </a>
-              <a href="https://wa.me/919986207964?text=Hi%20Smart%20Touch%20Appliances,%20I%20want%20to%20book%20a%20technician" target="_blank" rel="noopener noreferrer" className="bg-emerald-700 text-white font-extrabold px-8 py-3.5 rounded-full text-sm flex items-center gap-2">
+              <a href="https://wa.me/919916207964?text=Hi%20Smart%20Touch%20Appliances,%20I%20want%20to%20book%20a%20technician" target="_blank" rel="noopener noreferrer" className="bg-emerald-700 text-white font-extrabold px-8 py-3.5 rounded-full text-sm flex items-center gap-2">
                 <MessageSquare className="w-4 h-4" />
                 <span>WhatsApp Booking</span>
               </a>
@@ -160,7 +160,7 @@ export default function ContactPage() {
             <div className="pt-2 border-t border-stone-100 space-y-2 text-xs font-semibold text-stone-700">
               <p className="flex items-center gap-2">
                 <Phone className="w-4 h-4 text-sky-600" />
-                <span>Hotline: +91 99862 07964</span>
+                <span>Hotline: +91 99162 07964</span>
               </p>
               <p className="flex items-center gap-2">
                 <Clock className="w-4 h-4 text-sky-600" />

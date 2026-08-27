@@ -2,7 +2,7 @@ import { ShieldCheck, CheckCircle2, Award, Phone } from 'lucide-react';
 
 export const metadata = {
   title: '25-Point Refurbishment Quality Inspection Standard | Smart Touch Appliances',
-  description: 'Learn about our 25-point technical inspection standard for certified pre-owned washing machines and refrigerators in Bangalore. Call +91 99862 07964.',
+  description: 'Learn about our 25-point technical inspection standard for certified pre-owned washing machines and refrigerators in Bangalore. Call +91 99162 07964.',
 };
 
 export default function QualityInspectionPage() {

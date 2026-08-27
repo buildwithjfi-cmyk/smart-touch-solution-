@@ -7,7 +7,7 @@ import ApplianceCatalog from '@/components/ApplianceCatalog';
 
 export const metadata = {
   title: 'Smart Touch Appliances | Doorstep Appliance Repair & Refurbished Store Bangalore',
-  description: 'Bangalore\'s #1 Doorstep Appliance Repair & Certified Refurbished Appliance Store. 60-min arrival for Washing Machines, Fridges & ACs. Call +91 99862 07964.',
+  description: 'Bangalore\'s #1 Doorstep Appliance Repair & Certified Refurbished Appliance Store. 60-min arrival for Washing Machines, Fridges & ACs. Call +91 99162 07964.',
 };
 
 export default function HomePage() {
@@ -105,15 +105,15 @@ export default function HomePage() {
               {/* Primary Call to Actions */}
               <div className="pt-3 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
                 <a
-                  href="tel:+919986207964"
+                  href="tel:+919916207964"
                   className="btn-blue-primary w-full sm:w-auto px-8 py-4 text-base font-extrabold flex items-center justify-center gap-3 shadow-md"
                 >
                   <Phone className="w-5 h-5 fill-white" />
-                  <span>Call Hotline: +91 99862 07964</span>
+                  <span>Call Hotline: +91 99162 07964</span>
                 </a>
 
                 <a
-                  href="https://wa.me/919986207964?text=Hi%20Smart%20Touch%20Appliances,%20I%20need%20doorstep%20appliance%20repair"
+                  href="https://wa.me/919916207964?text=Hi%20Smart%20Touch%20Appliances,%20I%20need%20doorstep%20appliance%20repair"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full sm:w-auto bg-emerald-700 hover:bg-emerald-800 text-white font-extrabold px-8 py-4 rounded-full flex items-center justify-center gap-3 text-base shadow-md transition-colors"
@@ -231,14 +231,14 @@ export default function HomePage() {
           <p className="text-stone-600 text-sm">Our certified technicians are ready to visit your home in Bangalore within 60 minutes.</p>
           <div className="flex flex-col sm:flex-row justify-center items-center gap-4 pt-2">
             <a
-              href="tel:+919986207964"
+              href="tel:+919916207964"
               className="btn-blue-primary px-8 py-3.5 text-sm font-extrabold flex items-center gap-2"
             >
               <Phone className="w-4 h-4 fill-white" />
-              <span>Call +91 99862 07964</span>
+              <span>Call +91 99162 07964</span>
             </a>
             <a
-              href="https://wa.me/919986207964?text=Hi%20Smart%20Touch%20Appliances,%20I%20need%20a%20technician"
+              href="https://wa.me/919916207964?text=Hi%20Smart%20Touch%20Appliances,%20I%20need%20a%20technician"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-emerald-700 hover:bg-emerald-800 text-white font-extrabold px-8 py-3.5 rounded-full flex items-center gap-2 text-sm transition-colors"

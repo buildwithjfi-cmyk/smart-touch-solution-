@@ -3,7 +3,7 @@ import { MapPin, Phone, MessageSquare, CheckCircle2 } from 'lucide-react';
 
 export const metadata = {
   title: 'West & Central Bangalore Appliance Repair | Malleshwaram, Rajajinagar',
-  description: 'Fast doorstep appliance repair in West & Central Bangalore including Malleshwaram, Rajajinagar, Vijayanagar, Basaveshwaranagar & MG Road. Call +91 99862 07964.',
+  description: 'Fast doorstep appliance repair in West & Central Bangalore including Malleshwaram, Rajajinagar, Vijayanagar, Basaveshwaranagar & MG Road. Call +91 99162 07964.',
 };
 
 export default function WestBangalorePage() {
@@ -24,9 +24,9 @@ export default function WestBangalorePage() {
               Reliable doorstep washing machine, fridge, and AC repair technicians in Malleshwaram, Rajajinagar, and CBD Bangalore.
             </p>
             <div className="pt-2 flex justify-center gap-4">
-              <a href="tel:+919986207964" className="btn-blue-primary px-8 py-3.5 text-sm font-extrabold flex items-center gap-2">
+              <a href="tel:+919916207964" className="btn-blue-primary px-8 py-3.5 text-sm font-extrabold flex items-center gap-2">
                 <Phone className="w-4 h-4 fill-white" />
-                <span>Call +91 99862 07964</span>
+                <span>Call +91 99162 07964</span>
               </a>
             </div>
           </div>

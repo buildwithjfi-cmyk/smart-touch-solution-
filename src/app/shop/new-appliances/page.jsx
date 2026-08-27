@@ -3,7 +3,7 @@ import { Tag, ShieldCheck, Truck, Phone, MessageSquare } from 'lucide-react';
 
 export const metadata = {
   title: 'Brand New 2026 Home Appliances Bangalore | Factory Sealed Deals',
-  description: 'Buy brand new 2026 LG, Samsung, Bosch & Daikin appliances in Bangalore with full manufacturer warranty and instant doorstep installation. Call +91 99862 07964.',
+  description: 'Buy brand new 2026 LG, Samsung, Bosch & Daikin appliances in Bangalore with full manufacturer warranty and instant doorstep installation. Call +91 99162 07964.',
 };
 
 export default function NewAppliancesPage() {
@@ -22,11 +22,11 @@ export default function NewAppliancesPage() {
               Authorized brand new sales for LG, Samsung, Whirlpool, Bosch, and Daikin with full factory warranties, free doorstep setup, and old appliance trade-in discounts.
             </p>
             <div className="pt-2 flex justify-center gap-4">
-              <a href="tel:+919986207964" className="btn-blue-primary px-8 py-3.5 text-sm font-extrabold flex items-center gap-2">
+              <a href="tel:+919916207964" className="btn-blue-primary px-8 py-3.5 text-sm font-extrabold flex items-center gap-2">
                 <Phone className="w-4 h-4 fill-white" />
-                <span>Call +91 99862 07964</span>
+                <span>Call +91 99162 07964</span>
               </a>
-              <a href="https://wa.me/919986207964?text=Hi%20Smart%20Touch%20Appliances,%20I%20want%20to%20buy%20a%20brand%20new%20appliance" target="_blank" rel="noopener noreferrer" className="bg-emerald-700 text-white font-extrabold px-8 py-3.5 rounded-full text-sm flex items-center gap-2">
+              <a href="https://wa.me/919916207964?text=Hi%20Smart%20Touch%20Appliances,%20I%20want%20to%20buy%20a%20brand%20new%20appliance" target="_blank" rel="noopener noreferrer" className="bg-emerald-700 text-white font-extrabold px-8 py-3.5 rounded-full text-sm flex items-center gap-2">
                 <MessageSquare className="w-4 h-4" />
                 <span>WhatsApp Catalog</span>
               </a>

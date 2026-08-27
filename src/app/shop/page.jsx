@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 export const metadata = {
   title: 'Certified Refurbished & New Appliance Store Bangalore | Smart Touch',
-  description: 'Buy certified used & brand new washing machines, fridges & ACs in Bangalore. Save up to 80% with 25-point inspection certificate, 6 months warranty + free doorstep delivery. Call +91 99862 07964.',
+  description: 'Buy certified used & brand new washing machines, fridges & ACs in Bangalore. Save up to 80% with 25-point inspection certificate, 6 months warranty + free doorstep delivery. Call +91 99162 07964.',
 };
 
 export default function ShopPage() {
@@ -48,11 +48,11 @@ export default function ShopPage() {
             </div>
 
             <div className="pt-2 flex justify-center gap-4">
-              <a href="tel:+919986207964" className="btn-warm-primary px-8 py-3.5 text-sm font-extrabold flex items-center gap-2">
+              <a href="tel:+919916207964" className="btn-warm-primary px-8 py-3.5 text-sm font-extrabold flex items-center gap-2">
                 <Phone className="w-4 h-4 fill-white" />
-                <span>Call Hotline: +91 99862 07964</span>
+                <span>Call Hotline: +91 99162 07964</span>
               </a>
-              <a href="https://wa.me/919986207964?text=Hi%20Smart%20Touch%20Appliances,%20I%20want%20to%20buy%20an%20appliance" target="_blank" rel="noopener noreferrer" className="bg-emerald-700 text-white font-extrabold px-8 py-3.5 rounded-full text-sm flex items-center gap-2">
+              <a href="https://wa.me/919916207964?text=Hi%20Smart%20Touch%20Appliances,%20I%20want%20to%20buy%20an%20appliance" target="_blank" rel="noopener noreferrer" className="bg-emerald-700 text-white font-extrabold px-8 py-3.5 rounded-full text-sm flex items-center gap-2">
                 <MessageSquare className="w-4 h-4" />
                 <span>WhatsApp Catalog</span>
               </a>

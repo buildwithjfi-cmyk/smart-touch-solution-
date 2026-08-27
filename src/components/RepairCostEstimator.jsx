@@ -168,14 +168,14 @@ export default function RepairCostEstimator() {
 
           <div className="mt-6 space-y-2">
             <a
-              href={`tel:+919986207964`}
+              href={`tel:+919916207964`}
               className="btn-warm-primary w-full py-3.5 text-sm flex items-center justify-center gap-2 font-bold"
             >
               <Phone className="w-4 h-4 fill-white" />
-              <span>Call +91 99862 07964</span>
+              <span>Call +91 99162 07964</span>
             </a>
             <a
-              href={`https://wa.me/919986207964?text=Hi%20Smart%20Touch%20Appliances,%20I%20need%20a%20quote%20for%20${encodeURIComponent(currentAppliance.title)}%20-${encodeURIComponent(currentIssue.name)}`}
+              href={`https://wa.me/919916207964?text=Hi%20Smart%20Touch%20Appliances,%20I%20need%20a%20quote%20for%20${encodeURIComponent(currentAppliance.title)}%20-${encodeURIComponent(currentIssue.name)}`}
               target="_blank"
               rel="noopener noreferrer"
               className="w-full bg-emerald-700 hover:bg-emerald-800 text-white font-bold py-3 text-xs rounded-full flex items-center justify-center gap-2 transition-colors"

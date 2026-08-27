@@ -4,7 +4,7 @@ import RepairCostEstimator from '@/components/RepairCostEstimator';
 
 export const metadata = {
   title: 'AC Servicing & Gas Leak Refill Bangalore | Split & Window AC Repair',
-  description: 'High pressure jet wash AC cleaning and Freon gas leak repair in Bangalore across 287+ areas. Certified Daikin, LG, Voltas & Samsung AC service. Call +91 99862 07964.',
+  description: 'High pressure jet wash AC cleaning and Freon gas leak repair in Bangalore across 287+ areas. Certified Daikin, LG, Voltas & Samsung AC service. Call +91 99162 07964.',
 };
 
 export default function ACServicePage() {
@@ -30,11 +30,11 @@ export default function ACServicePage() {
               Doorstep Split & Window AC servicing, high-pressure foam jet wash, and gas leak refilling across Bangalore within 60 minutes.
             </p>
             <div className="pt-2 flex justify-center gap-4">
-              <a href="tel:+919986207964" className="btn-blue-primary px-8 py-3.5 text-sm font-extrabold flex items-center gap-2">
+              <a href="tel:+919916207964" className="btn-blue-primary px-8 py-3.5 text-sm font-extrabold flex items-center gap-2">
                 <Phone className="w-4 h-4 fill-white" />
-                <span>Call +91 99862 07964</span>
+                <span>Call +91 99162 07964</span>
               </a>
-              <a href="https://wa.me/919986207964?text=Hi%20Smart%20Touch%20Appliances,%20I%20need%20AC%20servicing" target="_blank" rel="noopener noreferrer" className="bg-emerald-700 text-white font-extrabold px-8 py-3.5 rounded-full text-sm flex items-center gap-2">
+              <a href="https://wa.me/919916207964?text=Hi%20Smart%20Touch%20Appliances,%20I%20need%20AC%20servicing" target="_blank" rel="noopener noreferrer" className="bg-emerald-700 text-white font-extrabold px-8 py-3.5 rounded-full text-sm flex items-center gap-2">
                 <MessageSquare className="w-4 h-4" />
                 <span>WhatsApp Booking</span>
               </a>

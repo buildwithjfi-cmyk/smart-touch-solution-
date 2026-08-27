@@ -2,7 +2,7 @@ import { HelpCircle, Phone, MessageSquare } from 'lucide-react';
 
 export const metadata = {
   title: 'Frequently Asked Questions & Support | Smart Touch Appliances Bangalore',
-  description: 'Find answers to common questions about appliance repair response times, pricing, warranties, and refurbished store guarantees. Call +91 99862 07964.',
+  description: 'Find answers to common questions about appliance repair response times, pricing, warranties, and refurbished store guarantees. Call +91 99162 07964.',
 };
 
 export default function FAQPage() {

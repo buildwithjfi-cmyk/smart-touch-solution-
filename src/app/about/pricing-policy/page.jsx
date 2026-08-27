@@ -2,7 +2,7 @@ import { HeartHandshake, ShieldCheck, Phone } from 'lucide-react';
 
 export const metadata = {
   title: 'Transparent Upfront Pricing & Warranty Policy | Smart Touch Appliances',
-  description: 'Learn about our transparent fixed pricing policy, zero hidden diagnostic fees, and official written service warranty in Bangalore. Call +91 99862 07964.',
+  description: 'Learn about our transparent fixed pricing policy, zero hidden diagnostic fees, and official written service warranty in Bangalore. Call +91 99162 07964.',
 };
 
 export default function PricingPolicyPage() {

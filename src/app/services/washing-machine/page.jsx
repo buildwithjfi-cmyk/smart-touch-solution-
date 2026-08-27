@@ -4,7 +4,7 @@ import RepairCostEstimator from '@/components/RepairCostEstimator';
 
 export const metadata = {
   title: 'Washing Machine Repair Bangalore | Front Load & Top Load Service',
-  description: 'Doorstep washing machine repair in Bangalore. Fix spin motor failure, water leaks, drum noise, and PCB faults for LG, Samsung, Whirlpool, Bosch & IFB. Call +91 99862 07964.',
+  description: 'Doorstep washing machine repair in Bangalore. Fix spin motor failure, water leaks, drum noise, and PCB faults for LG, Samsung, Whirlpool, Bosch & IFB. Call +91 99162 07964.',
 };
 
 export default function WashingMachineRepairPage() {
@@ -31,11 +31,11 @@ export default function WashingMachineRepairPage() {
               Same-day doorstep repair for Front Load, Top Load & Semi-Automatic washing machines across 287+ Bangalore areas with 100% genuine OEM spare parts and up to 180 days warranty.
             </p>
             <div className="pt-2 flex justify-center gap-4">
-              <a href="tel:+919986207964" className="btn-blue-primary px-8 py-3.5 text-sm font-extrabold flex items-center gap-2">
+              <a href="tel:+919916207964" className="btn-blue-primary px-8 py-3.5 text-sm font-extrabold flex items-center gap-2">
                 <Phone className="w-4 h-4 fill-white" />
-                <span>Call +91 99862 07964</span>
+                <span>Call +91 99162 07964</span>
               </a>
-              <a href="https://wa.me/919986207964?text=Hi%20Smart%20Touch%20Appliances,%20I%20need%20washing%20machine%20repair" target="_blank" rel="noopener noreferrer" className="bg-emerald-700 text-white font-extrabold px-8 py-3.5 rounded-full text-sm flex items-center gap-2">
+              <a href="https://wa.me/919916207964?text=Hi%20Smart%20Touch%20Appliances,%20I%20need%20washing%20machine%20repair" target="_blank" rel="noopener noreferrer" className="bg-emerald-700 text-white font-extrabold px-8 py-3.5 rounded-full text-sm flex items-center gap-2">
                 <MessageSquare className="w-4 h-4" />
                 <span>WhatsApp Booking</span>
               </a>

@@ -5,7 +5,7 @@ import RepairCostEstimator from '@/components/RepairCostEstimator';
 
 export const metadata = {
   title: 'Doorstep Appliance Repair Services Bangalore | Washing Machine, Fridge & AC Care',
-  description: 'Complete range of doorstep home appliance repair services in Bangalore. Same-day repair for Washing Machines, Refrigerators, Inverter ACs, and Microwaves. Call +91 99862 07964.',
+  description: 'Complete range of doorstep home appliance repair services in Bangalore. Same-day repair for Washing Machines, Refrigerators, Inverter ACs, and Microwaves. Call +91 99162 07964.',
 };
 
 export default function ServicesPage() {
@@ -82,11 +82,11 @@ export default function ServicesPage() {
             </p>
 
             <div className="pt-2 flex justify-center gap-4">
-              <a href="tel:+919986207964" className="btn-blue-primary px-8 py-3.5 text-sm font-extrabold flex items-center gap-2">
+              <a href="tel:+919916207964" className="btn-blue-primary px-8 py-3.5 text-sm font-extrabold flex items-center gap-2">
                 <Phone className="w-4 h-4 fill-white" />
-                <span>Call Hotline: +91 99862 07964</span>
+                <span>Call Hotline: +91 99162 07964</span>
               </a>
-              <a href="https://wa.me/919986207964?text=Hi%20Smart%20Touch%20Appliances,%20I%20need%20appliance%20service" target="_blank" rel="noopener noreferrer" className="bg-emerald-700 text-white font-extrabold px-8 py-3.5 rounded-full text-sm flex items-center gap-2">
+              <a href="https://wa.me/919916207964?text=Hi%20Smart%20Touch%20Appliances,%20I%20need%20appliance%20service" target="_blank" rel="noopener noreferrer" className="bg-emerald-700 text-white font-extrabold px-8 py-3.5 rounded-full text-sm flex items-center gap-2">
                 <MessageSquare className="w-4 h-4" />
                 <span>WhatsApp Booking</span>
               </a>

@@ -58,7 +58,7 @@ export default function LGServiceBangalorePage() {
               We have global service network. Please call our Bengaluru service network number.
             </p>
             <a
-              href="tel:+919986207964"
+              href="tel:+919916207964"
               className="bg-[#a50034] hover:bg-[#88002b] text-white font-bold px-6 py-2.5 rounded-full text-sm sm:text-base transition-colors shadow-sm inline-flex items-center gap-2 mt-1"
             >
               <span>1800 123 8033</span>
@@ -149,7 +149,7 @@ export default function LGServiceBangalorePage() {
             </div>
 
             <a
-              href="tel:+919986207964"
+              href="tel:+919916207964"
               className="bg-white text-stone-800 border border-stone-400 font-bold px-8 py-2.5 rounded-full text-sm hover:bg-stone-100 transition-colors shadow-xs"
             >
               Get Support

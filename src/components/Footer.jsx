@@ -24,14 +24,14 @@ export default function Footer() {
 
           <div className="flex flex-wrap items-center gap-4">
             <a
-              href="tel:+919986207964"
+              href="tel:+919916207964"
               className="bg-stone-900 hover:bg-stone-800 text-white font-extrabold px-6 py-3.5 rounded-full flex items-center gap-2 shadow transition-colors text-sm sm:text-base"
             >
               <Phone className="w-5 h-5 text-amber-400 fill-amber-400" />
-              <span>Call +91 99862 07964</span>
+              <span>Call +91 99162 07964</span>
             </a>
             <a
-              href="https://wa.me/919986207964?text=Hi%20Smart%20Touch%20Appliances,%20I%20need%20assistance"
+              href="https://wa.me/919916207964?text=Hi%20Smart%20Touch%20Appliances,%20I%20need%20assistance"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-emerald-700 hover:bg-emerald-800 text-white font-extrabold px-6 py-3.5 rounded-full flex items-center gap-2 shadow transition-colors text-sm sm:text-base"
@@ -70,7 +70,7 @@ export default function Footer() {
             </div>
             <div className="flex items-center gap-2 text-stone-700">
               <Phone className="w-4 h-4 text-amber-600 shrink-0" />
-              <span>Direct Hotline: <strong className="text-amber-700">+91 99862 07964</strong></span>
+              <span>Direct Hotline: <strong className="text-amber-700">+91 99162 07964</strong></span>
             </div>
             <div className="flex items-center gap-2 text-stone-700">
               <Mail className="w-4 h-4 text-amber-600 shrink-0" />
@@ -170,7 +170,7 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-3">
           <p>© {new Date().getFullYear()} Smart Touch Appliances (www.smarttouchappliances.com). All rights reserved.</p>
           <p className="flex items-center gap-3 text-stone-700">
-            <span>Direct Hotline: <strong className="text-amber-700">+91 99862 07964</strong></span>
+            <span>Direct Hotline: <strong className="text-amber-700">+91 99162 07964</strong></span>
             <span>•</span>
             <span>Repair • Refurbish • Replace</span>
           </p>

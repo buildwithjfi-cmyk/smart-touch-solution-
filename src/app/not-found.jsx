@@ -16,9 +16,9 @@ export default function NotFound() {
           <Home className="w-4 h-4" />
           <span>Back To Home</span>
         </Link>
-        <a href="tel:+919986207964" className="bg-stone-100 text-stone-800 border border-stone-300 px-6 py-3 rounded-full text-sm font-bold flex items-center gap-2">
+        <a href="tel:+919916207964" className="bg-stone-100 text-stone-800 border border-stone-300 px-6 py-3 rounded-full text-sm font-bold flex items-center gap-2">
           <Phone className="w-4 h-4 text-amber-600" />
-          <span>Call +91 99862 07964</span>
+          <span>Call +91 99162 07964</span>
         </a>
       </div>
     </div>
