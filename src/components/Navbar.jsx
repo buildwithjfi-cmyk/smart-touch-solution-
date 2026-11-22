@@ -62,19 +62,19 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           {/* Logo with Generated Image */}
           <Link href="/" className="flex items-center gap-3 group shrink-0">
-            <div className="w-11 h-11 rounded-xl bg-white p-1 flex items-center justify-center shadow-xs border border-sky-200 overflow-hidden group-hover:scale-105 transition-transform">
-              <img 
-                src="/logo.png" 
-                alt="Smart Touch Appliances Logo" 
-                className="w-full h-full object-contain"
-              />
-            </div>
+            <img
+              src="/logo.svg"
+              alt="Smart Touch Appliances logo"
+              width="44"
+              height="44"
+              className="w-11 h-11 shrink-0 group-hover:scale-105 transition-transform"
+            />
             <div>
-              <span className="text-xl sm:text-2xl font-black tracking-tight text-stone-900 flex items-center gap-1">
+              <span className="text-xl sm:text-2xl font-black tracking-tight leading-none text-stone-900 flex items-center gap-1">
                 SMART<span className="text-sky-700">TOUCH</span>
               </span>
-              <span className="block text-[10px] tracking-widest uppercase font-semibold text-sky-700 -mt-1">
-                Appliances • Bangalore
+              <span className="block text-[11px] sm:text-xs tracking-wide uppercase font-extrabold text-amber-700 leading-none mt-0">
+                Appliance Repair & Service
               </span>
             </div>
           </Link>

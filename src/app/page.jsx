@@ -1,8 +1,8 @@
 import Link from 'next/link';
 import { Phone, ShieldCheck, CheckCircle2, Wrench, Clock, Award, Star, Zap, ChevronRight, HelpCircle, Truck, Sparkles, MapPin } from 'lucide-react';
-import HeroAnimation from '@/components/HeroAnimation';
+import HeroImage from '@/components/HeroImage';
 import AreaCheckerWidget from '@/components/AreaCheckerWidget';
-import ServicePromise from '@/components/ServicePromise';
+import HowWeWork from '@/components/HowWeWork';
 import WhatsAppIcon from '@/components/WhatsAppIcon';
 
 export const metadata = {
@@ -73,17 +73,20 @@ export default function HomePage() {
     <div className="space-y-10 sm:space-y-16 pb-12 sm:pb-16 pt-4 sm:pt-8 bg-white text-stone-900">
       {/* Hero Section matching LG Service Page UI/UX */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="glass-card rounded-2xl sm:rounded-3xl p-6 sm:p-10 lg:p-12 border border-sky-200 bg-sky-50 relative overflow-hidden">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
-            {/* Left Content */}
-            <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
+        <div className="glass-card rounded-2xl sm:rounded-3xl p-6 sm:p-10 lg:p-12 border border-sky-200 bg-sky-50 relative overflow-hidden lg:min-h-[640px] lg:flex lg:items-center">
+          {/* Full-bleed background photo on desktop: public/hero.webp */}
+          <HeroImage />
+
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10 w-full">
+            {/* Left Content: sits on a white panel over the photo on desktop */}
+            <div className="lg:col-span-7 xl:col-span-6 space-y-6 text-center lg:text-left lg:bg-white/95 lg:backdrop-blur-sm lg:rounded-2xl lg:p-8 lg:shadow-[0_12px_40px_-12px_rgba(16,34,58,0.35)]">
               <div className="inline-flex items-center gap-2 bg-sky-100 border border-sky-300 px-4 py-1.5 rounded-full text-xs sm:text-sm font-bold text-sky-900 shadow-xs">
                 <Award className="w-4 h-4 text-sky-700" />
                 <span>Doorstep Appliance Repair in Bangalore</span>
               </div>
 
               <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-stone-900 tracking-tight leading-tight">
-                Appliance Repair <span className="text-sky-700">At Your Doorstep</span>
+                Appliance Repair <span className="text-amber-700">At Your Doorstep</span>
               </h1>
 
               <p className="text-stone-700 text-base sm:text-xl max-w-2xl mx-auto lg:mx-0 leading-relaxed">
@@ -136,13 +139,13 @@ export default function HomePage() {
                 </a>
               </div>
             </div>
-
-            {/* Right Interactive Animation */}
-            <div className="hidden lg:flex lg:col-span-5 justify-center">
-              <HeroAnimation />
-            </div>
           </div>
         </div>
+      </section>
+
+      {/* How We Work */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6">
+        <HowWeWork />
       </section>
 
       {/* Main Services Grid */}
@@ -207,10 +210,6 @@ export default function HomePage() {
         <AreaCheckerWidget />
       </section>
 
-      {/* Inspection, Estimate & Warranty */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6">
-        <ServicePromise />
-      </section>
 
       {/* Why Choose Smart Touch Section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 space-y-8">

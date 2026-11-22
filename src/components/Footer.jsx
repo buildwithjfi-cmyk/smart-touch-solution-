@@ -49,16 +49,21 @@ export default function Footer() {
         {/* Brand Summary */}
         <div className="lg:col-span-2 space-y-4">
           <div className="flex items-center gap-3">
-            <div className="w-11 h-11 rounded-xl bg-white p-1 flex items-center justify-center shadow-xs border border-amber-200 overflow-hidden">
-              <img 
-                src="/logo.png" 
-                alt="Smart Touch Appliances Logo" 
-                className="w-full h-full object-contain"
-              />
+            <img
+              src="/logo.svg"
+              alt="Smart Touch Appliances logo"
+              width="44"
+              height="44"
+              className="w-11 h-11 shrink-0"
+            />
+            <div>
+              <span className="block text-2xl font-black text-stone-900 leading-none">
+                SMART<span className="text-sky-700">TOUCH</span>
+              </span>
+              <span className="block text-xs tracking-wide uppercase font-extrabold text-amber-700 leading-none mt-0">
+                Appliance Repair & Service
+              </span>
             </div>
-            <span className="text-2xl font-black text-stone-900">
-              SMART<span className="text-amber-700">TOUCH</span>
-            </span>
           </div>
           <p className="text-stone-700 text-sm leading-relaxed">
             Smart Touch Appliances (`www.smarttouchappliances.com`) provides doorstep home appliance repair across Bangalore for washing machines, fridges, ACs, microwaves, and dryers with a ₹200 inspection charge, an estimate before any work, and 365 days warranty after repair.
