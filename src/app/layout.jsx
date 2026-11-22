@@ -3,12 +3,12 @@ import LayoutContent from '@/components/LayoutContent';
 
 export const metadata = {
   metadataBase: new URL('https://www.smarttouchappliances.com'),
-  title: 'Smart Touch Appliances | Home Appliance Repair & Certified Refurbished Store Bangalore',
-  description: 'Smart Touch Appliances provides 24/7 doorstep washing machine, fridge, and AC repair services in Bangalore across 287+ areas. Call +91 99162 07964 for same-day certified repair, refurbished sales, and new appliances with service warranty.',
-  keywords: 'Smart Touch Appliances, washing machine repair bangalore, fridge repair bangalore, AC repair bangalore, refurbished appliances bangalore, used washing machine, used fridge, smarttouchappliances.com',
+  title: 'Smart Touch Appliances | Home Appliance Repair Bangalore',
+  description: 'Smart Touch Appliances provides doorstep washing machine, fridge, AC, microwave and dryer repair services across Bangalore. ₹200 inspection charge, estimate before work, and 365 days warranty after repair. Call +91 99162 07964.',
+  keywords: 'Smart Touch Appliances, washing machine repair bangalore, fridge repair bangalore, AC repair bangalore, microwave repair bangalore, dryer repair bangalore, appliance repair bangalore, smarttouchappliances.com',
   openGraph: {
     title: 'Smart Touch Appliances - Bangalore Home Appliance Solutions',
-    description: 'Expert Washing Machine & Fridge Repair, Certified Refurbished Appliances, and Brand New Sales with Doorstep Installation in Bangalore. Call +91 99162 07964.',
+    description: 'Doorstep Washing Machine, Fridge, AC, Microwave & Dryer Repair in Bangalore. ₹200 inspection, estimate before work, 365 days warranty after repair. Call +91 99162 07964.',
     url: 'https://www.smarttouchappliances.com',
     siteName: 'Smart Touch Appliances',
     images: [
@@ -26,7 +26,7 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Smart Touch Appliances - Bangalore Home Appliance Solutions',
-    description: 'Expert Washing Machine & Fridge Repair, Certified Refurbished Appliances, and Brand New Sales in Bangalore. Call +91 99162 07964.',
+    description: 'Doorstep Washing Machine, Fridge, AC, Microwave & Dryer Repair in Bangalore. ₹200 inspection, estimate before work, 365 days warranty after repair. Call +91 99162 07964.',
     images: ['/homepage-whatsapp-image.webp'],
   },
   icons: {

@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from 'react';
-import { Phone, Mail, MessageSquare, CheckCircle2, AlertTriangle, Wrench } from 'lucide-react';
+import { Phone, CheckCircle2, AlertTriangle, Wrench } from 'lucide-react';
+import WhatsAppIcon from '@/components/WhatsAppIcon';
 
 export default function LGServiceBangalorePage() {
   const [firstName, setFirstName] = useState('');
@@ -85,7 +86,7 @@ export default function LGServiceBangalorePage() {
                     value={firstName}
                     onChange={(e) => setFirstName(e.target.value)}
                     placeholder="Enter Your First Name"
-                    className="w-full px-4 py-3.5 rounded-xl border border-stone-300 text-sm focus:outline-none focus:ring-2 focus:ring-[#a50034] bg-white"
+                    className="w-full px-4 py-3.5 rounded-xl border border-stone-300 text-base sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#a50034] bg-white"
                   />
                 </div>
 
@@ -100,7 +101,7 @@ export default function LGServiceBangalorePage() {
                     value={mobileNumber}
                     onChange={(e) => setMobileNumber(e.target.value)}
                     placeholder="Mobile Number"
-                    className="w-full px-4 py-3.5 text-sm focus:outline-none bg-white"
+                    className="w-full px-4 py-3.5 text-base sm:text-sm focus:outline-none bg-white"
                   />
                 </div>
               </div>
@@ -158,15 +159,15 @@ export default function LGServiceBangalorePage() {
 
           {/* 3 White Contact Cards */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {/* Email us */}
+            {/* Doorstep visit */}
             <div className="bg-white p-8 rounded-3xl shadow-xs border border-stone-100 flex items-start gap-4">
               <div className="w-12 h-12 rounded-xl bg-stone-100 flex items-center justify-center shrink-0">
-                <Mail className="w-6 h-6 text-stone-800" />
+                <Wrench className="w-6 h-6 text-stone-800" />
               </div>
               <div className="space-y-1">
-                <h3 className="text-base font-bold text-stone-900">Email us</h3>
+                <h3 className="text-base font-bold text-stone-900">Doorstep Visit</h3>
                 <p className="text-stone-500 text-xs leading-relaxed">
-                  For more straightforward questions, send us an email
+                  Our technician comes to your home and repairs your appliance on the spot.
                 </p>
               </div>
             </div>
@@ -174,7 +175,7 @@ export default function LGServiceBangalorePage() {
             {/* WhatsApp */}
             <div className="bg-white p-8 rounded-3xl shadow-xs border border-stone-100 flex items-start gap-4">
               <div className="w-12 h-12 rounded-xl bg-stone-100 flex items-center justify-center shrink-0">
-                <MessageSquare className="w-6 h-6 text-stone-800" />
+                <WhatsAppIcon className="w-6 h-6 text-stone-800" />
               </div>
               <div className="space-y-1">
                 <h3 className="text-base font-bold text-stone-900">WhatsApp</h3>

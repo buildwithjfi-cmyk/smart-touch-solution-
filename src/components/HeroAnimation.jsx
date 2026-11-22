@@ -11,17 +11,17 @@ const circularSteps = [
     title: 'Book Service',
     icon: Phone,
     position: 'top-0 left-1/2 -translate-x-1/2 -translate-y-1/2',
-    color: 'bg-amber-600',
-    detail: 'Call +91 99162 07964 or send a WhatsApp message to request doorstep repair or refurbished sales.'
+    color: 'bg-amber-700',
+    detail: 'Call +91 99162 07964 or send a WhatsApp message to request a doorstep repair visit.'
   },
   {
     id: 2,
     stepNumber: '02',
-    title: '60-Min Dispatch',
+    title: 'Doorstep Visit',
     icon: Clock,
     position: 'right-0 top-1/2 translate-x-1/2 -translate-y-1/2',
     color: 'bg-sky-600',
-    detail: 'Background-verified technician dispatched to your home across 287+ Bangalore areas.'
+    detail: 'A technician visits your home anywhere in Bangalore.'
   },
   {
     id: 3,
@@ -29,8 +29,8 @@ const circularSteps = [
     title: 'Transparent Repair',
     icon: Wrench,
     position: 'bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2',
-    color: 'bg-blue-700',
-    detail: 'Free diagnostic check, honest upfront estimate, and instant repair using 100% genuine OEM spare parts.'
+    color: 'bg-sky-800',
+    detail: '₹200 inspection, a clear estimate before any work, then repair using genuine spare parts.'
   },
   {
     id: 4,
@@ -39,7 +39,7 @@ const circularSteps = [
     icon: ShieldCheck,
     position: 'left-0 top-1/2 -translate-x-1/2 -translate-y-1/2',
     color: 'bg-emerald-600',
-    detail: 'Written service warranty up to 180 days with dedicated post-repair customer support.'
+    detail: '365 days warranty after repair with dedicated post-repair customer support.'
   }
 ];
 
@@ -60,7 +60,7 @@ export default function HeroAnimation() {
   return (
     <div className="relative w-full max-w-md mx-auto py-8">
       {/* Ambient Blue & Amber Background Glow */}
-      <div className="absolute inset-0 bg-gradient-to-r from-sky-400/20 via-blue-500/10 to-amber-500/20 rounded-full blur-3xl pointer-events-none"></div>
+      <div className="absolute inset-0 bg-sky-200/40 rounded-full blur-3xl pointer-events-none"></div>
 
       {/* Main Circular Flow Chart Container */}
       <div className="relative w-[300px] sm:w-[340px] h-[300px] sm:h-[340px] mx-auto flex items-center justify-center">
@@ -112,7 +112,7 @@ export default function HeroAnimation() {
                 }`}
               >
                 <StepIcon className={`w-5 h-5 ${isActive ? 'text-white' : 'text-stone-700'}`} />
-                <span className={`text-[9px] font-extrabold mt-0.5 ${isActive ? 'text-sky-100' : 'text-stone-500'}`}>
+                <span className={`text-[9px] font-extrabold mt-0.5 ${isActive ? 'text-sky-100' : 'text-stone-600'}`}>
                   {step.stepNumber}
                 </span>
               </div>
@@ -122,7 +122,7 @@ export default function HeroAnimation() {
                 className={`absolute left-1/2 -translate-x-1/2 whitespace-nowrap text-[10px] font-extrabold px-2.5 py-0.5 rounded-full shadow-xs transition-all ${
                   isActive
                     ? 'bg-stone-900 text-white opacity-100 -bottom-6'
-                    : 'bg-stone-100 text-stone-600 opacity-80 -bottom-5'
+                    : 'bg-stone-100 text-stone-700 opacity-80 -bottom-5'
                 }`}
               >
                 {step.title}
@@ -140,7 +140,7 @@ export default function HeroAnimation() {
           </span>
           <h4 className="text-base font-bold text-stone-900">{current.title}</h4>
         </div>
-        <p className="text-stone-600 text-xs leading-relaxed">{current.detail}</p>
+        <p className="text-stone-700 text-sm leading-relaxed">{current.detail}</p>
 
         <div className="pt-2 flex justify-center">
           <Link

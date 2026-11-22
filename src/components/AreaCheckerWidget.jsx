@@ -24,10 +24,7 @@ export default function AreaCheckerWidget() {
 
     setSearchResult({
       areaName: match,
-      available: true,
-      eta: '30 - 45 Minutes',
-      techniciansActive: Math.floor(Math.random() * 6) + 4,
-      freeInspection: true
+      available: true
     });
   };
 
@@ -35,27 +32,27 @@ export default function AreaCheckerWidget() {
     <div className="w-full max-w-4xl mx-auto glass-card rounded-2xl p-6 sm:p-8 border border-stone-200 relative overflow-hidden shadow-sm bg-white">
       <div className="text-center space-y-3 mb-6 relative z-10">
         <div className="inline-flex items-center gap-2 bg-amber-50 border border-amber-200 px-3.5 py-1 rounded-full text-amber-800 text-xs font-bold uppercase tracking-wider">
-          <MapPin className="w-4 h-4 text-amber-600" />
-          <span>287+ Bangalore Localities Covered</span>
+          <MapPin className="w-4 h-4 text-amber-700" />
+          <span>Doorstep Service Across Bangalore</span>
         </div>
         <h3 className="text-2xl sm:text-3xl font-extrabold text-stone-900">
           Check Doorstep Service Availability In Your Area
         </h3>
-        <p className="text-stone-600 text-sm max-w-xl mx-auto">
-          Type your locality or PIN code to see active technician status, estimated arrival time, and instant service booking.
+        <p className="text-stone-700 text-sm max-w-xl mx-auto">
+          Type your locality to check that we cover your area, then book a doorstep visit.
         </p>
       </div>
 
       {/* Search Input Form */}
       <form onSubmit={handleSearch} className="flex flex-col sm:flex-row items-center gap-3 relative z-10">
         <div className="relative w-full">
-          <MapPin className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-amber-600" />
+          <MapPin className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-amber-700" />
           <input
             type="text"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Enter your area (e.g., Indiranagar, Whitefield, HSR Layout...)"
-            className="w-full pl-12 pr-4 py-4 rounded-xl bg-stone-50 border border-stone-300 text-stone-900 placeholder-stone-400 focus:outline-none focus:border-amber-600 focus:ring-2 focus:ring-amber-500/20 transition-all font-medium text-sm"
+            className="w-full pl-12 pr-4 py-4 rounded-xl bg-stone-50 border border-stone-300 text-stone-900 placeholder-stone-500 focus:outline-none focus:border-amber-600 focus:ring-2 focus:ring-amber-500/20 transition-all font-medium text-base sm:text-sm"
           />
         </div>
         <button
@@ -69,7 +66,7 @@ export default function AreaCheckerWidget() {
 
       {/* Quick Location Chips */}
       <div className="mt-4 flex flex-wrap items-center justify-center gap-2 relative z-10">
-        <span className="text-xs font-semibold text-stone-500 mr-1">Popular:</span>
+        <span className="text-xs font-semibold text-stone-600 mr-1">Popular:</span>
         {popularBangaloreAreas.slice(0, 6).map((area) => (
           <button
             key={area}
@@ -77,10 +74,7 @@ export default function AreaCheckerWidget() {
               setQuery(area);
               setSearchResult({
                 areaName: area,
-                available: true,
-                eta: '30 - 45 Minutes',
-                techniciansActive: Math.floor(Math.random() * 5) + 5,
-                freeInspection: true
+                available: true
               });
             }}
             className="text-xs bg-stone-100 hover:bg-amber-100 text-stone-700 hover:text-amber-800 border border-stone-200 hover:border-amber-300 px-3 py-1 rounded-full transition-all"
@@ -103,14 +97,8 @@ export default function AreaCheckerWidget() {
                   <span>Doorstep Service Ready in <span className="text-emerald-700 capitalize">{searchResult.areaName}</span>!</span>
                 </h4>
                 <div className="flex flex-wrap items-center gap-4 text-xs text-stone-700 mt-1">
-                  <span className="flex items-center gap-1">
-                    <Clock className="w-3.5 h-3.5 text-amber-600" /> ETA: <strong>{searchResult.eta}</strong>
-                  </span>
-                  <span className="flex items-center gap-1">
-                    <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" /> <strong>{searchResult.techniciansActive} Certified Technicians</strong> On Duty
-                  </span>
                   <span className="bg-emerald-200 text-emerald-900 px-2 py-0.5 rounded font-bold">
-                    Free On-Site Diagnostic
+                    Inspection ₹200
                   </span>
                 </div>
               </div>

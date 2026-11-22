@@ -1,5 +1,6 @@
 import AreaCheckerWidget from '@/components/AreaCheckerWidget';
-import { MapPin, Phone, MessageSquare, CheckCircle2 } from 'lucide-react';
+import { MapPin, Phone, CheckCircle2 } from 'lucide-react';
+import WhatsAppIcon from '@/components/WhatsAppIcon';
 
 export const metadata = {
   title: 'North Bangalore Appliance Repair | Hebbal, Yelahanka, Kalyan Nagar',
@@ -10,21 +11,21 @@ export default function NorthBangalorePage() {
   const localities = ['Hebbal', 'Yelahanka', 'Kalyan Nagar', 'Kammanahalli', 'Hennur', 'Vidyaranyapura', 'RT Nagar', 'Thanisandra', 'Sahakar Nagar', 'Jakkur', 'Mathikere', 'Sanjay Nagar'];
 
   return (
-    <div className="space-y-16 pb-16 pt-8 bg-white text-stone-900">
+    <div className="space-y-10 sm:space-y-16 pb-12 sm:pb-16 pt-4 sm:pt-8 bg-white text-stone-900">
       <section className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="glass-card rounded-3xl p-8 sm:p-12 border border-sky-100 bg-gradient-to-b from-sky-50/50 to-white text-center">
+        <div className="glass-card rounded-2xl sm:rounded-3xl p-6 sm:p-10 lg:p-12 border border-sky-100 bg-sky-50 text-center">
           <div className="max-w-3xl mx-auto space-y-4">
             <span className="inline-block bg-sky-100 text-sky-900 text-xs font-bold px-3.5 py-1 rounded-full uppercase tracking-wider">
               📍 North & Airport Corridor Network
             </span>
-            <h1 className="text-4xl sm:text-5xl font-black text-stone-900">
+            <h1 className="text-3xl sm:text-5xl font-black text-stone-900">
               North Bangalore Appliance Service
             </h1>
-            <p className="text-stone-600 text-base sm:text-lg">
+            <p className="text-stone-700 text-base sm:text-lg">
               Dedicated service response team covering Hebbal flyover belt, Yelahanka New Town, Kalyan Nagar & Thanisandra.
             </p>
-            <div className="pt-2 flex justify-center gap-4">
-              <a href="tel:+919916207964" className="btn-blue-primary px-8 py-3.5 text-sm font-extrabold flex items-center gap-2">
+            <div className="pt-2 flex flex-col sm:flex-row justify-center items-stretch sm:items-center gap-3">
+              <a href="tel:+919916207964" className="btn-blue-primary w-full sm:w-auto px-8 py-3.5 text-sm font-extrabold flex items-center justify-center gap-2">
                 <Phone className="w-4 h-4 fill-white" />
                 <span>Call +91 99162 07964</span>
               </a>

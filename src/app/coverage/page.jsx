@@ -1,10 +1,11 @@
 import AreaCheckerWidget from '@/components/AreaCheckerWidget';
-import { MapPin, Phone, MessageSquare, CheckCircle2, Award, Clock } from 'lucide-react';
+import { MapPin, Phone, CheckCircle2, Award, Clock } from 'lucide-react';
 import Link from 'next/link';
+import WhatsAppIcon from '@/components/WhatsAppIcon';
 
 export const metadata = {
-  title: 'Bangalore Doorstep Appliance Repair Coverage | 287+ Localities Served',
-  description: 'Doorstep washing machine, fridge & AC repair across 287+ Bangalore localities including Indiranagar, Koramangala, Whitefield, HSR, Jayanagar & Yelahanka. Call +91 99162 07964.',
+  title: 'Bangalore Doorstep Appliance Repair Coverage | Areas We Serve',
+  description: 'Doorstep washing machine, fridge & AC repair across Bangalore including Indiranagar, Koramangala, Whitefield, HSR, Jayanagar & Yelahanka. Call +91 99162 07964.',
 };
 
 export default function CoveragePage() {
@@ -32,31 +33,31 @@ export default function CoveragePage() {
   ];
 
   return (
-    <div className="space-y-16 pb-16 pt-8 bg-white text-stone-900">
+    <div className="space-y-10 sm:space-y-16 pb-12 sm:pb-16 pt-4 sm:pt-8 bg-white text-stone-900">
       {/* Hero Banner Section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="glass-card rounded-3xl p-8 sm:p-12 border border-sky-200 bg-gradient-to-b from-sky-50 via-blue-50/30 to-white text-center">
+        <div className="glass-card rounded-2xl sm:rounded-3xl p-6 sm:p-10 lg:p-12 border border-sky-200 bg-sky-50 text-center">
           <div className="max-w-3xl mx-auto space-y-4">
             <div className="inline-flex items-center gap-2 bg-sky-100 border border-sky-300 px-4 py-1.5 rounded-full text-xs sm:text-sm font-bold text-sky-900 shadow-xs">
               <MapPin className="w-4 h-4 text-sky-700" />
-              <span>Bangalore 287+ Locality Rapid Response Network</span>
+              <span>Doorstep Service Across Bangalore</span>
             </div>
 
-            <h1 className="text-4xl sm:text-6xl font-black text-stone-900 tracking-tight leading-tight">
-              Service Areas In <span className="text-gradient-blue">Bangalore</span>
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-stone-900 tracking-tight leading-tight">
+              Service Areas In <span className="text-sky-700">Bangalore</span>
             </h1>
 
-            <p className="text-stone-600 text-base sm:text-xl leading-relaxed">
-              Stationed service hubs across East, South, North, and West Bangalore ensuring background-verified technicians arrive at your home within 60 minutes!
+            <p className="text-stone-700 text-base sm:text-xl leading-relaxed">
+              We provide doorstep appliance repair across East, South, North, and West Bangalore.
             </p>
 
-            <div className="pt-2 flex justify-center gap-4">
-              <a href="tel:+919916207964" className="btn-blue-primary px-8 py-3.5 text-sm font-extrabold flex items-center gap-2">
+            <div className="pt-2 flex flex-col sm:flex-row justify-center items-stretch sm:items-center gap-3">
+              <a href="tel:+919916207964" className="btn-blue-primary w-full sm:w-auto px-8 py-3.5 text-sm font-extrabold flex items-center justify-center gap-2">
                 <Phone className="w-4 h-4 fill-white" />
                 <span>Call Hotline: +91 99162 07964</span>
               </a>
-              <a href="https://wa.me/919916207964?text=Hi%20Smart%20Touch%20Appliances,%20is%20my%20area%20covered?" target="_blank" rel="noopener noreferrer" className="bg-emerald-700 text-white font-extrabold px-8 py-3.5 rounded-full text-sm flex items-center gap-2">
-                <MessageSquare className="w-4 h-4" />
+              <a href="https://wa.me/919916207964?text=Hi%20Smart%20Touch%20Appliances,%20is%20my%20area%20covered?" target="_blank" rel="noopener noreferrer" className="bg-emerald-700 hover:bg-emerald-800 text-white font-extrabold w-full sm:w-auto px-8 py-3.5 rounded-full text-sm flex items-center justify-center gap-2 transition-colors">
+                <WhatsAppIcon className="w-4 h-4" />
                 <span>WhatsApp Area Check</span>
               </a>
             </div>
@@ -68,7 +69,7 @@ export default function CoveragePage() {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 space-y-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {zones.map((zone, idx) => (
-            <div key={idx} className="glass-card glass-card-hover rounded-3xl p-8 border border-stone-200 bg-white space-y-4">
+            <div key={idx} className="glass-card glass-card-hover rounded-2xl sm:rounded-3xl p-5 sm:p-8 border border-stone-200 bg-white space-y-4">
               <div className="flex items-center justify-between border-b border-stone-200 pb-3">
                 <h2 className="text-xl font-extrabold text-stone-900 flex items-center gap-2">
                   <MapPin className="w-5 h-5 text-sky-600" />

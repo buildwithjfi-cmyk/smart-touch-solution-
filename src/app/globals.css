@@ -29,8 +29,8 @@ body {
 
 .glass-card-hover:hover {
   transform: translateY(-4px);
-  border-color: #0284C7;
-  box-shadow: 0 12px 30px -4px rgba(2, 132, 199, 0.15);
+  border-color: theme('colors.sky.600');
+  box-shadow: 0 12px 30px -4px theme('colors.sky.600 / 15%');
 }
 
 .glass-nav {
@@ -40,77 +40,42 @@ body {
   border-bottom: 1px solid #E7E5E4;
 }
 
-/* Gradient Text Utilities */
-.text-gradient-vibrant,
-.text-gradient-warm {
-  background: linear-gradient(135deg, #D97706 0%, #B45309 50%, #92400E 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.text-gradient-orange,
-.text-gradient-terracotta {
-  background: linear-gradient(135deg, #EA580C 0%, #C2410C 50%, #9A3412 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
+/* Accent text (flat colour, no gradients) */
 .text-gradient-blue,
-.text-gradient-sapphire {
-  background: linear-gradient(135deg, #0284C7 0%, #1D4ED8 50%, #1E40AF 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
+.text-gradient-sapphire { color: theme('colors.sky.700'); }
+.text-gradient-vibrant,
+.text-gradient-warm,
+.text-gradient-orange,
+.text-gradient-terracotta { color: theme('colors.amber.700'); }
 
-/* Warm & Blue Primary Buttons */
+/* Primary buttons: solid fills */
+.btn-blue-primary,
+.btn-warm-primary,
 .btn-vibrant-primary,
-.btn-warm-primary {
-  background: linear-gradient(135deg, #D97706 0%, #B45309 100%);
-  color: #FFFFFF;
-  font-weight: 700;
-  border-radius: 9999px;
-  box-shadow: 0 4px 18px rgba(217, 119, 6, 0.25);
-  transition: all 0.3s ease;
-}
-
-.btn-vibrant-primary:hover,
-.btn-warm-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 24px rgba(217, 119, 6, 0.35);
-  filter: brightness(1.05);
-}
-
-.btn-blue-primary {
-  background: linear-gradient(135deg, #0284C7 0%, #1D4ED8 100%);
-  color: #FFFFFF;
-  font-weight: 700;
-  border-radius: 9999px;
-  box-shadow: 0 4px 18px rgba(2, 132, 199, 0.25);
-  transition: all 0.3s ease;
-}
-
-.btn-blue-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 24px rgba(2, 132, 199, 0.35);
-  filter: brightness(1.05);
-}
-
 .btn-vibrant-orange,
 .btn-warm-terracotta {
-  background: linear-gradient(135deg, #EA580C 0%, #C2410C 100%);
   color: #FFFFFF;
   font-weight: 700;
   border-radius: 9999px;
-  box-shadow: 0 4px 18px rgba(234, 88, 12, 0.25);
-  transition: all 0.3s ease;
+  transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
-
+.btn-blue-primary:hover,
+.btn-warm-primary:hover,
+.btn-vibrant-primary:hover,
 .btn-vibrant-orange:hover,
-.btn-warm-terracotta:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 24px rgba(234, 88, 12, 0.35);
-  filter: brightness(1.05);
-}
+.btn-warm-terracotta:hover { transform: translateY(-1px); }
+
+.btn-blue-primary { background-color: theme('colors.sky.700'); box-shadow: 0 4px 14px theme('colors.sky.700 / 20%'); }
+.btn-blue-primary:hover { background-color: theme('colors.sky.800'); }
+
+.btn-warm-primary,
+.btn-vibrant-primary,
+.btn-vibrant-orange,
+.btn-warm-terracotta { background-color: theme('colors.amber.700'); box-shadow: 0 4px 14px theme('colors.amber.700 / 20%'); }
+.btn-warm-primary:hover,
+.btn-vibrant-primary:hover,
+.btn-vibrant-orange:hover,
+.btn-warm-terracotta:hover { background-color: theme('colors.amber.800'); }
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
@@ -124,7 +89,7 @@ body {
   border-radius: 5px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #0284C7;
+  background: theme('colors.sky.600');
 }
 
 @keyframes spin-slow {
@@ -134,4 +99,17 @@ body {
 
 .animate-spin-slow {
   animation: spin-slow 30s linear infinite;
+}
+
+/* Gentle ripple for the floating call button: one soft ring, then a long pause */
+@keyframes soft-ripple {
+  0% { transform: scale(1); opacity: 0.35; }
+  30% { transform: scale(1.6); opacity: 0; }
+  100% { transform: scale(1.6); opacity: 0; }
+}
+.animate-soft-ripple {
+  animation: soft-ripple 3.5s ease-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .animate-soft-ripple { animation: none; opacity: 0; }
 }

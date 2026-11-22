@@ -1,8 +1,8 @@
 import ContactPage from '../page';
 
 export const metadata = {
-  title: 'Instant Doorstep Technician Booking Bangalore | Smart Touch Appliances',
-  description: 'Book a background-verified doorstep appliance technician in Bangalore. Arrival in 60 minutes. Call +91 99162 07964.',
+  title: 'Book a Doorstep Technician Bangalore | Smart Touch Appliances',
+  description: 'Book a doorstep appliance repair visit in Bangalore. ₹200 inspection, estimate before work, 365 days warranty after repair. Call +91 99162 07964.',
 };
 
 export default function BookTechnicianPage() {

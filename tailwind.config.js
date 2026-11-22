@@ -8,6 +8,35 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        // Site palette: Navy (primary) & Orange (accent).
+        // The whole site uses `sky-*` for primary and `amber-*` for accent,
+        // so changing these two scales re-themes every page.
+        sky: {
+          50: '#EEF3F9',
+          100: '#DCE6F2',
+          200: '#B9CDE4',
+          300: '#8FAECF',
+          400: '#5F87B3',
+          500: '#3D6594',
+          600: '#2B4F7A',
+          700: '#1E3A5F',
+          800: '#172E4C',
+          900: '#10223A',
+          950: '#0A1626',
+        },
+        amber: {
+          50: '#FFF7ED',
+          100: '#FFEDD5',
+          200: '#FED7AA',
+          300: '#FDBA74',
+          400: '#FB923C',
+          500: '#F97316',
+          600: '#EA580C',
+          700: '#C2410C',
+          800: '#9A3412',
+          900: '#7C2D12',
+          950: '#431407',
+        },
         brand: {
           bg: "#FFFFFF",
           bgSecondary: "#FAF9F5",

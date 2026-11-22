@@ -7,8 +7,8 @@ export default function NotFound() {
       <div className="w-20 h-20 rounded-full bg-amber-100 border border-amber-300 flex items-center justify-center text-amber-800 text-4xl font-black">
         404
       </div>
-      <h1 className="text-3xl font-extrabold text-stone-900">Page Not Found</h1>
-      <p className="text-stone-600 text-sm max-w-md">
+      <h1 className="text-2xl sm:text-3xl font-extrabold text-stone-900">Page Not Found</h1>
+      <p className="text-stone-700 text-sm max-w-md">
         The page you are looking for might have been moved or doesn't exist. Let's get you back home or connect with our support team.
       </p>
       <div className="flex flex-col sm:flex-row items-center gap-4">
@@ -17,7 +17,7 @@ export default function NotFound() {
           <span>Back To Home</span>
         </Link>
         <a href="tel:+919916207964" className="bg-stone-100 text-stone-800 border border-stone-300 px-6 py-3 rounded-full text-sm font-bold flex items-center gap-2">
-          <Phone className="w-4 h-4 text-amber-600" />
+          <Phone className="w-4 h-4 text-amber-700" />
           <span>Call +91 99162 07964</span>
         </a>
       </div>
