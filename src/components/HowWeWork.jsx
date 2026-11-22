@@ -184,45 +184,83 @@ export default function HowWeWork() {
     return () => io.disconnect();
   }, []);
 
-  // Auto-advance, looping back to step 1 after the last step.
+  // ---- Endless loop ------------------------------------------------------
+  // The five cards are rendered three times: [copy 0][copy 1][copy 2].
+  // The visitor always rests in the middle copy. When the carousel moves into
+  // copy 0 or copy 2, it jumps instantly to the identical card in copy 1, so it
+  // can keep moving forward (or back) forever without ever rewinding.
+  // `active` is the index across all 15 cards; the step shown is active % N.
+  const N = steps.length;
+
+  const cardLeft = (track, i) => track.children[i].offsetLeft - track.children[0].offsetLeft;
+
+  // Move without animation (used for the invisible jump between copies).
+  const jumpTo = (track, i) => {
+    track.style.scrollBehavior = 'auto';
+    track.style.scrollSnapType = 'none';
+    track.scrollLeft = cardLeft(track, i);
+    requestAnimationFrame(() => {
+      track.style.scrollBehavior = '';
+      track.style.scrollSnapType = '';
+    });
+  };
+
+  // Start on step 1 in the middle copy, and stay put if the window is resized.
+  useEffect(() => {
+    const track = trackRef.current;
+    if (!track) return;
+    jumpTo(track, N);
+    setActive(N);
+    const onResize = () => jumpTo(track, activeRef.current);
+    window.addEventListener('resize', onResize);
+    return () => window.removeEventListener('resize', onResize);
+  }, []);
+
+  // Auto-advance forward, one card at a time, endlessly.
   useEffect(() => {
     if (userPaused || reduceMotion) return;
     const id = setInterval(() => {
       if (document.hidden || hovering.current || !onScreen.current) return;
       if (Date.now() < holdUntil.current) return;
-      const next = activeRef.current >= steps.length - 1 ? 0 : activeRef.current + 1;
-      goTo(next, false);
+      goTo(activeRef.current + 1, false);
     }, AUTOPLAY_MS);
     return () => clearInterval(id);
   }, [userPaused, reduceMotion]);
 
   const holdForVisitor = () => { holdUntil.current = Date.now() + RESUME_AFTER_MS; };
 
-  // Track which card is nearest the left edge as the user swipes.
+  // Track the card nearest the left edge; once scrolling settles outside the
+  // middle copy, jump back into it.
   useEffect(() => {
     const track = trackRef.current;
     if (!track) return;
     let frame = 0;
+    let settle = 0;
+    const nearestCard = () => {
+      const left = track.scrollLeft;
+      let nearest = 0;
+      let best = Infinity;
+      for (let i = 0; i < track.children.length; i++) {
+        const d = Math.abs(cardLeft(track, i) - left);
+        if (d < best) { best = d; nearest = i; }
+      }
+      return nearest;
+    };
     const onScroll = () => {
       cancelAnimationFrame(frame);
-      frame = requestAnimationFrame(() => {
-        const cards = Array.from(track.children);
-        const left = track.scrollLeft;
-        let nearest = 0;
-        let best = Infinity;
-        cards.forEach((card, i) => {
-          const d = Math.abs(card.offsetLeft - track.offsetLeft - left);
-          if (d < best) { best = d; nearest = i; }
-        });
-        // At the far right end, the last card can't reach the left edge
-        if (left + track.clientWidth >= track.scrollWidth - 4) nearest = cards.length - 1;
-        setActive(nearest);
-      });
+      frame = requestAnimationFrame(() => setActive(nearestCard()));
+      clearTimeout(settle);
+      settle = setTimeout(() => {
+        const i = nearestCard();
+        if (i < N) { jumpTo(track, i + N); setActive(i + N); }
+        else if (i >= 2 * N) { jumpTo(track, i - N); setActive(i - N); }
+      }, 140);
     };
     track.addEventListener('scroll', onScroll, { passive: true });
     return () => {
       track.removeEventListener('scroll', onScroll);
       cancelAnimationFrame(frame);
+      clearTimeout(settle);
     };
   }, []);
 
@@ -230,14 +268,15 @@ export default function HowWeWork() {
     const track = trackRef.current;
     if (!track) return;
     if (fromVisitor) holdForVisitor();
-    const i = Math.max(0, Math.min(steps.length - 1, index));
-    const card = track.children[i];
+    const i = Math.max(0, Math.min(track.children.length - 1, index));
     const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    track.scrollTo({ left: card.offsetLeft - track.offsetLeft, behavior: reduce ? 'auto' : 'smooth' });
+    track.scrollTo({ left: cardLeft(track, i), behavior: reduce ? 'auto' : 'smooth' });
   };
 
-  const atStart = active === 0;
-  const atEnd = active === steps.length - 1;
+  // Dots: go to that step in the copy the visitor is currently in.
+  const goToStep = (stepIdx) => goTo(active - (active % N) + stepIdx);
+
+  const currentStep = active % N;
 
   return (
     <div
@@ -259,7 +298,6 @@ export default function HowWeWork() {
           <button
             type="button"
             onClick={() => goTo(active - 1)}
-            disabled={atStart}
             aria-label="Previous step"
             className="w-11 h-11 rounded-full border border-stone-300 bg-white text-stone-900 flex items-center justify-center hover:border-sky-700 hover:text-sky-700 disabled:opacity-40 disabled:hover:border-stone-300 disabled:hover:text-stone-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-600 transition-colors"
           >
@@ -268,7 +306,6 @@ export default function HowWeWork() {
           <button
             type="button"
             onClick={() => goTo(active + 1)}
-            disabled={atEnd}
             aria-label="Next step"
             className="w-11 h-11 rounded-full border border-stone-300 bg-white text-stone-900 flex items-center justify-center hover:border-sky-700 hover:text-sky-700 disabled:opacity-40 disabled:hover:border-stone-300 disabled:hover:text-stone-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-600 transition-colors"
           >
@@ -285,14 +322,16 @@ export default function HowWeWork() {
         onTouchStart={holdForVisitor}
         onPointerDown={holdForVisitor}
         onWheel={holdForVisitor}
-        className="no-scrollbar flex gap-4 overflow-x-auto snap-x snap-mandatory scroll-smooth -mx-4 px-4 sm:mx-0 sm:px-0 pb-2 motion-reduce:scroll-auto"
+        className="no-scrollbar flex gap-4 overflow-x-auto snap-x snap-mandatory scroll-smooth -mx-4 px-4 scroll-px-4 sm:mx-0 sm:px-0 sm:scroll-px-0 pb-2 motion-reduce:scroll-auto"
       >
-        {steps.map(({ art, title, desc }, idx) => {
+        {[0, 1, 2].flatMap((copy) => steps.map(({ art, title, desc }, idx) => {
           const last = idx === steps.length - 1;
+          const isClone = copy !== 1; // copies 0 and 2 exist only for the endless loop
           return (
             <li
-              key={title}
-              aria-label={`Step ${idx + 1} of ${steps.length}: ${title}`}
+              key={`${copy}-${title}`}
+              aria-hidden={isClone ? 'true' : undefined}
+              aria-label={isClone ? undefined : `Step ${idx + 1} of ${steps.length}: ${title}`}
               className="snap-start shrink-0 w-[82%] sm:w-[calc(50%-0.5rem)] lg:w-[calc(33.333%-0.667rem)]"
             >
               <div className="h-full rounded-2xl bg-white border border-stone-200 shadow-[0_1px_3px_rgba(16,34,58,0.06)] p-2.5 flex flex-col">
@@ -313,7 +352,7 @@ export default function HowWeWork() {
               </div>
             </li>
           );
-        })}
+        }))}
       </ol>
 
       {/* Pause/play + progress dots (dots are tappable) */}
@@ -332,12 +371,12 @@ export default function HowWeWork() {
           <button
             key={s.title}
             type="button"
-            onClick={() => goTo(idx)}
+            onClick={() => goToStep(idx)}
             aria-label={`Go to step ${idx + 1}: ${s.title}`}
-            aria-current={active === idx ? 'step' : undefined}
+            aria-current={currentStep === idx ? 'step' : undefined}
             className="p-1.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-600 rounded-full"
           >
-            <span className={`block h-2 rounded-full transition-all ${active === idx ? 'w-6 bg-sky-700' : 'w-2 bg-stone-300'}`}></span>
+            <span className={`block h-2 rounded-full transition-all ${currentStep === idx ? 'w-6 bg-sky-700' : 'w-2 bg-stone-300'}`}></span>
           </button>
         ))}
       </div>

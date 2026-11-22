@@ -3,6 +3,9 @@ import LayoutContent from '@/components/LayoutContent';
 
 export const metadata = {
   metadataBase: new URL('https://www.smarttouchappliances.com'),
+  verification: {
+    google: 'd5WM0TMV5dLLNwDIT2Lr0sbcSJd0n7_kNUl5UUy3XnY',
+  },
   title: 'Smart Touch Appliances | Home Appliance Repair Bangalore',
   description: 'Smart Touch Appliances provides doorstep washing machine, fridge, AC, microwave and dryer repair services across Bangalore. ₹200 inspection charge, estimate before work, and 365 days warranty after repair. Call +91 99162 07964.',
   keywords: 'Smart Touch Appliances, washing machine repair bangalore, fridge repair bangalore, AC repair bangalore, microwave repair bangalore, dryer repair bangalore, appliance repair bangalore, smarttouchappliances.com',
