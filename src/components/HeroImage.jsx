@@ -29,7 +29,7 @@ export default function HeroImage({
         decoding="async"
         onLoad={() => setLoaded(true)}
         onError={() => setLoaded(false)}
-        className={`w-full h-full object-cover object-right transition-opacity duration-500 ${loaded ? 'opacity-100' : 'opacity-0'}`}
+        className={`w-full h-full object-cover object-[100%_75%] transition-opacity duration-500 ${loaded ? 'opacity-100' : 'opacity-0'}`}
       />
     </div>
   );
