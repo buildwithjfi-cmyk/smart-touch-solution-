@@ -12,7 +12,7 @@ export default function Footer() {
   return (
     <footer className="bg-stone-100 border-t border-stone-200 text-stone-700 text-sm">
       {/* Top Callout Banner */}
-      <div className="bg-amber-700 py-8 sm:py-10 px-4 sm:px-6 text-white shadow-inner">
+      <div data-track="footer_banner" className="bg-amber-700 py-8 sm:py-10 px-4 sm:px-6 text-white shadow-inner">
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-6">
           <div>
             <div className="inline-flex items-center gap-2 bg-white/20 border border-white/30 px-3.5 py-1 rounded-full text-white text-xs font-bold uppercase tracking-wider mb-2">

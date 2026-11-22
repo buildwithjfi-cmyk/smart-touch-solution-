@@ -1,5 +1,6 @@
 import './globals.css';
 import LayoutContent from '@/components/LayoutContent';
+import Analytics from '@/components/Analytics';
 
 export const metadata = {
   metadataBase: new URL('https://www.smarttouchappliances.com'),
@@ -47,6 +48,7 @@ export default function RootLayout({ children }) {
     <html lang="en" className="scroll-smooth">
       <body className="bg-white text-stone-900 min-h-screen flex flex-col font-sans antialiased selection:bg-amber-100 selection:text-amber-900">
         <LayoutContent>{children}</LayoutContent>
+        <Analytics />
       </body>
     </html>
   );

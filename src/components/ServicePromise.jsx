@@ -24,7 +24,7 @@ const promises = [
 
 export default function ServicePromise() {
   return (
-    <div className="w-full max-w-5xl mx-auto glass-card rounded-2xl p-6 sm:p-10 border border-stone-200 shadow-sm bg-white">
+    <div data-track="pricing_section" className="w-full max-w-5xl mx-auto glass-card rounded-2xl p-6 sm:p-10 border border-stone-200 shadow-sm bg-white">
       <div className="text-center max-w-2xl mx-auto mb-8 space-y-2">
         <span className="inline-flex items-center gap-2 bg-amber-50 text-amber-800 border border-amber-200 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
           <ShieldCheck className="w-4 h-4 text-amber-700" />

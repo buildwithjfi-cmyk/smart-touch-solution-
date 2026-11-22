@@ -281,6 +281,7 @@ export default function HowWeWork() {
   return (
     <div
       ref={rootRef}
+      data-track="how_we_work"
       className="space-y-6 sm:space-y-8"
       onMouseEnter={() => { hovering.current = true; }}
       onMouseLeave={() => { hovering.current = false; }}

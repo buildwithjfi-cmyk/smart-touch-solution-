@@ -71,8 +71,8 @@ export default function HomePage() {
 
   return (
     <div className="space-y-10 sm:space-y-16 pb-12 sm:pb-16 pt-4 sm:pt-8 bg-white text-stone-900">
-      {/* Hero Section matching LG Service Page UI/UX */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6">
+      {/* Hero Section */}
+      <section data-track="hero" className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="glass-card rounded-2xl sm:rounded-3xl p-6 sm:p-10 lg:px-12 lg:py-10 border border-sky-200 bg-sky-50 relative overflow-hidden lg:flex lg:items-center">
           {/* Full-bleed background photo on desktop: public/hero.webp */}
           <HeroImage />
@@ -232,7 +232,7 @@ export default function HomePage() {
       </section>
 
       {/* Bottom Call to Action Banner */}
-      <section className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+      <section data-track="bottom_cta" className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
         <div className="glass-card p-8 sm:p-10 rounded-3xl border border-sky-200 bg-sky-50 space-y-4">
           <h3 className="text-2xl sm:text-3xl font-bold text-stone-900">Need Doorstep Appliance Repair?</h3>
           <p className="text-stone-700 text-sm">Call or WhatsApp us to book a technician visit at your home in Bangalore.</p>

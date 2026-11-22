@@ -10,6 +10,7 @@ const WHATSAPP_URL =
 export default function FloatingContactButtons() {
   return (
     <div
+      data-track="floating_button"
       className="fixed right-4 sm:right-5 z-50 flex flex-col items-end gap-3"
       style={{ bottom: 'max(1.25rem, env(safe-area-inset-bottom))' }}
     >

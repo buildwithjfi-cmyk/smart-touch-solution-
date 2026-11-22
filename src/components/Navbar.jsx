@@ -22,7 +22,7 @@ export default function Navbar() {
   return (
     <>
     {/* USP bar: visible on every screen size; scrolls away so only the menu stays pinned */}
-    <div className="bg-sky-800 text-white px-4 py-2">
+    <div data-track="top_bar" className="bg-sky-800 text-white px-4 py-2">
       <div className="max-w-7xl mx-auto flex items-center justify-center lg:justify-between gap-4">
         <ul className="flex flex-wrap justify-center items-center gap-x-3 sm:gap-x-6 gap-y-1 text-xs sm:text-sm font-semibold" aria-label="Why choose Smart Touch">
           {usps.map((usp, idx) => (
@@ -55,7 +55,7 @@ export default function Navbar() {
       </div>
     </div>
 
-    <header className="sticky top-0 z-50 w-full">
+    <header data-track="menu" className="sticky top-0 z-50 w-full">
 
       {/* Main Navigation Bar */}
       <nav className="glass-nav py-3 px-4 sm:px-6">
