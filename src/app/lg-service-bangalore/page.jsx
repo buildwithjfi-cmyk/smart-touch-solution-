@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { Phone, ChevronRight, Info } from 'lucide-react';
 import ServicePromise from '@/components/ServicePromise';
 import WhatsAppIcon from '@/components/WhatsAppIcon';
+import ApplianceIcon from '@/components/ApplianceIcon';
 import JsonLd from '@/components/JsonLd';
 
 // LG appliance repair by Smart Touch Appliances, an independent repair service.
@@ -10,35 +11,35 @@ import JsonLd from '@/components/JsonLd';
 const appliances = [
   {
     title: 'LG Washing Machine',
-    icon: '🧺',
+    icon: 'washer',
     sub: 'Front load • Top load • Washer dryer',
     desc: 'Direct Drive motor noise, not spinning, not draining, water leaks and error codes.',
     href: '/services/washing-machine',
   },
   {
     title: 'LG Refrigerator',
-    icon: '🧊',
+    icon: 'fridge',
     sub: 'Single door • Double door • Side-by-side',
     desc: 'Not cooling, inverter compressor faults, ice build-up and gas refilling.',
     href: '/services/refrigerator',
   },
   {
     title: 'LG Air Conditioner',
-    icon: '❄️',
+    icon: 'ac',
     sub: 'Dual Inverter split • Window AC',
     desc: 'Weak cooling, water dripping, gas leaks, foam jet service and PCB faults.',
     href: '/services/ac-service',
   },
   {
     title: 'LG Microwave Oven',
-    icon: '🍲',
+    icon: 'microwave',
     sub: 'Solo • Grill • Convection',
     desc: 'Not heating, sparking inside and touchpad not responding.',
     href: '/services/microwave',
   },
   {
     title: 'LG Dryer',
-    icon: '♨️',
+    icon: 'dryer',
     sub: 'Clothes dryer • Washer dryer',
     desc: 'Clothes still damp, drum not turning and drying cycle errors.',
     href: '/services/dryer',
@@ -143,8 +144,8 @@ export default function LGServiceBangalorePage() {
                 className="group h-full flex flex-col rounded-2xl border border-stone-200 bg-white p-4 sm:p-5 shadow-xs hover:border-sky-600 hover:shadow-md active:scale-[0.99] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-600 transition-all"
               >
                 <div className="flex items-center gap-3.5">
-                  <span className="w-14 h-14 shrink-0 rounded-xl bg-sky-50 border border-sky-100 flex items-center justify-center text-3xl" aria-hidden="true">
-                    {item.icon}
+                  <span className="w-14 h-14 shrink-0 rounded-xl bg-sky-50 border border-sky-100 flex items-center justify-center" aria-hidden="true">
+                    <ApplianceIcon name={item.icon} className="w-10 h-10" />
                   </span>
                   <div className="min-w-0">
                     <h3 className="text-lg font-bold text-stone-900 leading-tight">{item.title} Repair</h3>

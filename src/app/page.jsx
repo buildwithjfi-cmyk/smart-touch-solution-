@@ -5,6 +5,7 @@ import AreaCheckerWidget from '@/components/AreaCheckerWidget';
 import HowWeWork from '@/components/HowWeWork';
 import BrandLogos from '@/components/BrandLogos';
 import WhatsAppIcon from '@/components/WhatsAppIcon';
+import ApplianceIcon from '@/components/ApplianceIcon';
 import JsonLd from '@/components/JsonLd';
 
 export const metadata = {
@@ -54,7 +55,7 @@ export default function HomePage() {
   const mainServices = [
     {
       title: 'Washing Machine',
-      icon: '🧺',
+      icon: 'washer',
       sub: 'Front load • Top load • Semi-automatic',
       desc: 'Not spinning, leaking, noisy drum or a dead control board? We fix it at your home.',
       href: '/services/washing-machine',
@@ -62,7 +63,7 @@ export default function HomePage() {
     },
     {
       title: 'Refrigerator',
-      icon: '🧊',
+      icon: 'fridge',
       sub: 'Single door • Double door • Side-by-side',
       desc: 'Not cooling, compressor clicking or ice build-up. Repaired on the spot.',
       href: '/services/refrigerator',
@@ -70,7 +71,7 @@ export default function HomePage() {
     },
     {
       title: 'Air Conditioner',
-      icon: '❄️',
+      icon: 'ac',
       sub: 'Split AC • Window AC • Inverter',
       desc: 'Weak cooling, water dripping or gas leaks. Foam jet service and repairs.',
       href: '/services/ac-service',
@@ -78,7 +79,7 @@ export default function HomePage() {
     },
     {
       title: 'Microwave Oven',
-      icon: '🍲',
+      icon: 'microwave',
       sub: 'Solo • Grill • Convection',
       desc: 'Not heating, sparking inside or touchpad not responding.',
       href: '/services/microwave',
@@ -86,7 +87,7 @@ export default function HomePage() {
     },
     {
       title: 'Dryer',
-      icon: '♨️',
+      icon: 'dryer',
       sub: 'Clothes dryer • Washer dryer',
       desc: 'Clothes still damp, drum not turning or error codes on the display.',
       href: '/services/dryer',
@@ -95,11 +96,11 @@ export default function HomePage() {
   ];
 
   const applianceTiles = [
-    { label: 'Washing Machine', icon: '🧺', href: '/services/washing-machine' },
-    { label: 'Refrigerator', icon: '🧊', href: '/services/refrigerator' },
-    { label: 'AC', icon: '❄️', href: '/services/ac-service' },
-    { label: 'Microwave', icon: '🍲', href: '/services/microwave' },
-    { label: 'Dryer', icon: '♨️', href: '/services/dryer' },
+    { label: 'Washing Machine', icon: 'washer', href: '/services/washing-machine' },
+    { label: 'Refrigerator', icon: 'fridge', href: '/services/refrigerator' },
+    { label: 'AC', icon: 'ac', href: '/services/ac-service' },
+    { label: 'Microwave', icon: 'microwave', href: '/services/microwave' },
+    { label: 'Dryer', icon: 'dryer', href: '/services/dryer' },
   ];
 
 
@@ -139,7 +140,7 @@ export default function HomePage() {
                         href={tile.href}
                         className="flex flex-col items-center justify-center gap-1.5 h-full min-h-[88px] lg:min-h-[72px] p-3 lg:p-2 rounded-2xl bg-white border border-stone-200 shadow-xs lg:shadow-md text-stone-900 hover:border-sky-500 hover:bg-sky-50 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-600 transition-all"
                       >
-                        <span className="text-3xl lg:text-2xl leading-none" aria-hidden="true">{tile.icon}</span>
+                        <ApplianceIcon name={tile.icon} className="w-10 h-10 lg:w-9 lg:h-9" />
                         <span className="text-sm lg:text-[13px] font-bold text-center leading-tight">{tile.label}</span>
                       </Link>
                     </li>
@@ -199,8 +200,8 @@ export default function HomePage() {
                 className="group h-full flex flex-col rounded-2xl border border-stone-200 bg-white p-4 sm:p-5 shadow-xs hover:border-sky-600 hover:shadow-md active:scale-[0.99] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-600 transition-all"
               >
                 <div className="flex items-center gap-3.5">
-                  <span className="w-14 h-14 shrink-0 rounded-xl bg-sky-50 border border-sky-100 flex items-center justify-center text-3xl" aria-hidden="true">
-                    {item.icon}
+                  <span className="w-14 h-14 shrink-0 rounded-xl bg-sky-50 border border-sky-100 flex items-center justify-center" aria-hidden="true">
+                    <ApplianceIcon name={item.icon} className="w-10 h-10" />
                   </span>
                   <div className="min-w-0">
                     <h3 className="text-lg font-bold text-stone-900 leading-tight">{item.title} Repair</h3>

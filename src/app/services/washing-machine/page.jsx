@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { Phone, ShieldCheck, CheckCircle2, Wrench, Clock, Star } from 'lucide-react';
 import ServicePromise from '@/components/ServicePromise';
 import WhatsAppIcon from '@/components/WhatsAppIcon';
+import ApplianceIcon from '@/components/ApplianceIcon';
 
 export const metadata = {
   alternates: { canonical: '/services/washing-machine' },
@@ -23,8 +24,9 @@ export default function WashingMachineRepairPage() {
       <section className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="glass-card rounded-2xl sm:rounded-3xl p-6 sm:p-10 lg:p-12 border border-sky-100 bg-sky-50 text-center">
           <div className="max-w-3xl mx-auto space-y-4">
-            <span className="inline-block bg-sky-100 text-sky-900 text-xs font-bold px-3.5 py-1 rounded-full uppercase tracking-wider">
-              🧺 Dedicated Appliance Repair
+            <span className="inline-flex items-center gap-1.5 bg-sky-100 text-sky-900 text-xs font-bold px-3.5 py-1 rounded-full uppercase tracking-wider">
+              <ApplianceIcon name="washer" className="w-5 h-5 shrink-0" />
+              Dedicated Appliance Repair
             </span>
             <h1 className="text-3xl sm:text-5xl font-black text-stone-900">
               Washing Machine Repair In <span className="text-sky-700">Bangalore</span>

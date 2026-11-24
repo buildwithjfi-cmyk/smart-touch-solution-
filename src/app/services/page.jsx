@@ -3,6 +3,7 @@ import { Phone, ShieldCheck, CheckCircle2, Award, ChevronRight } from 'lucide-re
 import AreaCheckerWidget from '@/components/AreaCheckerWidget';
 import ServicePromise from '@/components/ServicePromise';
 import WhatsAppIcon from '@/components/WhatsAppIcon';
+import ApplianceIcon from '@/components/ApplianceIcon';
 
 export const metadata = {
   alternates: { canonical: '/services' },
@@ -14,7 +15,7 @@ export default function ServicesPage() {
   const servicesList = [
     {
       title: 'LG Appliance Repair',
-      icon: '🏆',
+      icon: 'lg',
       models: 'LG Direct Drive • Smart Inverter • Dual Inverter AC • NeoChef',
       desc: 'Independent doorstep repair for LG home appliances. We fix OE, UE, dE and PE error codes, Direct Drive motor noise, and inverter AC and fridge faults.',
       price: 'Inspection ₹200',
@@ -24,7 +25,7 @@ export default function ServicesPage() {
     },
     {
       title: 'Washing Machine Repair Service',
-      icon: '🧺',
+      icon: 'washer',
       models: 'Front Load • Top Load • Semi-Automatic',
       desc: 'Fix spinning motor failures, water leaks, drum noise, PCB electronics, and door latch locks across LG, Samsung, Bosch, IFB, and Siemens machines.',
       price: 'Inspection ₹200',
@@ -34,7 +35,7 @@ export default function ServicesPage() {
     },
     {
       title: 'Fridge & Refrigerator Repair',
-      icon: '🧊',
+      icon: 'fridge',
       models: 'Single Door • Frost Free • Side-by-Side Inverter',
       desc: 'Doorstep repair for cooling loss, continuous running, compressor clicking, thermostat defects, and gas refilling.',
       price: 'Inspection ₹200',
@@ -44,7 +45,7 @@ export default function ServicesPage() {
     },
     {
       title: 'AC Service & Foam Jet Wash',
-      icon: '❄️',
+      icon: 'ac',
       models: 'Split AC • Window AC • Inverter PCB',
       desc: 'High-pressure foam jet wash, Freon gas leak soldering, inverter motherboard repair, and water dripping fixes for better cooling.',
       price: 'Inspection ₹200',
@@ -54,7 +55,7 @@ export default function ServicesPage() {
     },
     {
       title: 'Microwave Oven Service',
-      icon: '🍲',
+      icon: 'microwave',
       models: 'Solo • Grill • Convection Ovens',
       desc: 'Fix magnetron heating failures, touch panel button issues, internal sparks, and turntable motor problems.',
       price: 'Inspection ₹200',
@@ -64,7 +65,7 @@ export default function ServicesPage() {
     },
     {
       title: 'Dryer Repair Service',
-      icon: '♨️',
+      icon: 'dryer',
       models: 'Clothes Dryers • Washer Dryers',
       desc: 'Fix dryers that do not heat, drums that do not turn, loud noise, long drying times, and error codes.',
       price: 'Inspection ₹200',
@@ -114,7 +115,11 @@ export default function ServicesPage() {
             <div key={idx} className="glass-card glass-card-hover rounded-2xl sm:rounded-3xl p-5 sm:p-8 border border-stone-200 bg-white flex flex-col justify-between space-y-6">
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
-                  <span className="text-4xl">{item.icon}</span>
+                  {item.icon === 'lg' ? (
+                    <Award className="w-12 h-12 text-amber-600" aria-hidden="true" />
+                  ) : (
+                    <ApplianceIcon name={item.icon} className="w-12 h-12" />
+                  )}
                   <span className="bg-sky-100 text-sky-900 border border-sky-300 font-extrabold text-xs px-3 py-1 rounded-full">
                     {item.price}
                   </span>

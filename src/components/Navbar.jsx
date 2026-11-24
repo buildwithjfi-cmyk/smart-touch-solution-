@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { Phone, Wrench, Menu, X, ChevronDown, ShieldCheck, MapPin, HelpCircle, HeartHandshake, Award } from 'lucide-react';
 import WhatsAppIcon from '@/components/WhatsAppIcon';
+import ApplianceIcon from '@/components/ApplianceIcon';
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -101,35 +102,35 @@ export default function Navbar() {
                   </div>
                 </Link>
                 <Link href="/services/washing-machine" className="flex items-center gap-2.5 p-2.5 rounded-xl hover:bg-sky-50 hover:text-sky-800 transition-colors text-xs font-bold text-stone-800">
-                  <span className="text-base">🧺</span>
+                  <ApplianceIcon name="washer" className="w-6 h-6 shrink-0" />
                   <div>
                     <span className="block">Washing Machine Repair</span>
                     <span className="text-[10px] font-medium text-stone-600">Front & Top Load • Motors & PCB</span>
                   </div>
                 </Link>
                 <Link href="/services/refrigerator" className="flex items-center gap-2.5 p-2.5 rounded-xl hover:bg-sky-50 hover:text-sky-800 transition-colors text-xs font-bold text-stone-800">
-                  <span className="text-base">🧊</span>
+                  <ApplianceIcon name="fridge" className="w-6 h-6 shrink-0" />
                   <div>
                     <span className="block">Refrigerator Repair</span>
                     <span className="text-[10px] font-medium text-stone-600">Cooling Loss • Gas Charging</span>
                   </div>
                 </Link>
                 <Link href="/services/ac-service" className="flex items-center gap-2.5 p-2.5 rounded-xl hover:bg-sky-50 hover:text-sky-800 transition-colors text-xs font-bold text-stone-800">
-                  <span className="text-base">❄️</span>
+                  <ApplianceIcon name="ac" className="w-6 h-6 shrink-0" />
                   <div>
                     <span className="block">AC Service & Jet Wash</span>
                     <span className="text-[10px] font-medium text-stone-600">High-Pressure Jet • Freon Gas</span>
                   </div>
                 </Link>
                 <Link href="/services/microwave" className="flex items-center gap-2.5 p-2.5 rounded-xl hover:bg-sky-50 hover:text-sky-800 transition-colors text-xs font-bold text-stone-800">
-                  <span className="text-base">🍲</span>
+                  <ApplianceIcon name="microwave" className="w-6 h-6 shrink-0" />
                   <div>
                     <span className="block">Microwave Oven Repair</span>
                     <span className="text-[10px] font-medium text-stone-600">Magnetron • Touchpad Panels</span>
                   </div>
                 </Link>
                 <Link href="/services/dryer" className="flex items-center gap-2.5 p-2.5 rounded-xl hover:bg-sky-50 hover:text-sky-800 transition-colors text-xs font-bold text-stone-800">
-                  <span className="text-base">♨️</span>
+                  <ApplianceIcon name="dryer" className="w-6 h-6 shrink-0" />
                   <div>
                     <span className="block">Dryer Repair</span>
                     <span className="text-[10px] font-medium text-stone-600">Dryers • Washer Dryers</span>

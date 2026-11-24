@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { Phone, ShieldCheck, CheckCircle2, Wrench, Clock } from 'lucide-react';
 import ServicePromise from '@/components/ServicePromise';
 import WhatsAppIcon from '@/components/WhatsAppIcon';
+import ApplianceIcon from '@/components/ApplianceIcon';
 
 export const metadata = {
   alternates: { canonical: '/services/ac-service' },
@@ -22,8 +23,9 @@ export default function ACServicePage() {
       <section className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="glass-card rounded-2xl sm:rounded-3xl p-6 sm:p-10 lg:p-12 border border-sky-100 bg-sky-50 text-center">
           <div className="max-w-3xl mx-auto space-y-4">
-            <span className="inline-block bg-sky-100 text-sky-900 text-xs font-bold px-3.5 py-1 rounded-full uppercase tracking-wider">
-              ❄️ Air Conditioner Care
+            <span className="inline-flex items-center gap-1.5 bg-sky-100 text-sky-900 text-xs font-bold px-3.5 py-1 rounded-full uppercase tracking-wider">
+              <ApplianceIcon name="ac" className="w-5 h-5 shrink-0" />
+              Air Conditioner Care
             </span>
             <h1 className="text-3xl sm:text-5xl font-black text-stone-900">
               AC Repair & Jet Wash In <span className="text-sky-700">Bangalore</span>
