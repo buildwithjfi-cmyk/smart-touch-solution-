@@ -4,6 +4,7 @@ import Link from 'next/link';
 import WhatsAppIcon from '@/components/WhatsAppIcon';
 
 export const metadata = {
+  alternates: { canonical: '/coverage' },
   title: 'Bangalore Doorstep Appliance Repair Coverage | Areas We Serve',
   description: 'Doorstep washing machine, fridge & AC repair across Bangalore including Indiranagar, Koramangala, Whitefield, HSR, Jayanagar & Yelahanka. Call +91 99162 07964.',
 };

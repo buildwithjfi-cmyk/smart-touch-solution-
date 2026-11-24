@@ -3,6 +3,7 @@ import { MapPin, Phone, CheckCircle2 } from 'lucide-react';
 import WhatsAppIcon from '@/components/WhatsAppIcon';
 
 export const metadata = {
+  alternates: { canonical: '/coverage/east-bangalore' },
   title: 'East Bangalore Appliance Repair | Indiranagar, Whitefield, Marathahalli',
   description: 'Doorstep washing machine, fridge & AC repair in East Bangalore including Indiranagar, Whitefield, Bellandur, Sarjapur & HSR. Call +91 99162 07964.',
 };
@@ -19,7 +20,7 @@ export default function EastBangalorePage() {
               📍 East Bangalore & IT Hub Service Network
             </span>
             <h1 className="text-3xl sm:text-5xl font-black text-stone-900">
-              East Bangalore Appliance Repair & Sales
+              East Bangalore Appliance Repair
             </h1>
             <p className="text-stone-700 text-base sm:text-lg">
               Doorstep technicians covering Indiranagar, Whitefield and the IT corridor.

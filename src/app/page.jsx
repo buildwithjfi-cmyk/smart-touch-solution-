@@ -5,46 +5,93 @@ import AreaCheckerWidget from '@/components/AreaCheckerWidget';
 import HowWeWork from '@/components/HowWeWork';
 import BrandLogos from '@/components/BrandLogos';
 import WhatsAppIcon from '@/components/WhatsAppIcon';
+import JsonLd from '@/components/JsonLd';
 
 export const metadata = {
+  alternates: { canonical: '/' },
   title: 'Smart Touch Appliances | Doorstep Appliance Repair Bangalore',
   description: 'Doorstep repair for Washing Machines, Fridges, ACs, Microwaves & Dryers in Bangalore. ₹200 inspection, estimate before work & 365 days warranty after repair. Call +91 99162 07964.',
+};
+
+const SITE = 'https://www.smarttouchappliances.com';
+
+// Tells Google who we are, what we fix and where. Keep in sync with the visible page.
+const businessSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'HomeAndConstructionBusiness',
+  '@id': `${SITE}/#business`,
+  name: 'Smart Touch Appliances',
+  url: SITE,
+  logo: `${SITE}/logo.png`,
+  image: `${SITE}/hero.webp`,
+  telephone: '+91-99162-07964',
+  priceRange: '₹₹',
+  description: 'Doorstep repair for washing machines, refrigerators, ACs, microwaves and dryers across Bangalore. ₹200 inspection, estimate before work and 365 days warranty after repair.',
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Bengaluru',
+    addressRegion: 'Karnataka',
+    addressCountry: 'IN',
+  },
+  areaServed: { '@type': 'City', name: 'Bengaluru' },
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Doorstep Appliance Repair',
+    itemListElement: [
+      ['Washing Machine Repair', '/services/washing-machine'],
+      ['Refrigerator Repair', '/services/refrigerator'],
+      ['AC Service & Repair', '/services/ac-service'],
+      ['Microwave Oven Repair', '/services/microwave'],
+      ['Dryer Repair', '/services/dryer'],
+    ].map(([name, path]) => ({
+      '@type': 'Offer',
+      itemOffered: { '@type': 'Service', name, url: `${SITE}${path}`, areaServed: 'Bengaluru' },
+    })),
+  },
 };
 
 export default function HomePage() {
   const mainServices = [
     {
-      title: 'Washing Machine Repair',
+      title: 'Washing Machine',
       icon: '🧺',
-      sub: 'Front Load • Top Load • Semi-Automatic',
-      desc: 'Expert doorstep diagnosis for motor failure, drum noise, water leaks, and PCB circuit faults across all major brands with genuine OEM parts.',
+      sub: 'Front load • Top load • Semi-automatic',
+      desc: 'Not spinning, leaking, noisy drum or a dead control board? We fix it at your home.',
       href: '/services/washing-machine',
-      highlights: ['Motor & Spinning Failure Fix', 'PCB Electronic Board Repair', 'Drum Descaling & Leak Seal']
+      highlights: ['Motor & spin', 'PCB board', 'Leaks & noise'],
     },
     {
-      title: 'Refrigerator & Fridge Service',
+      title: 'Refrigerator',
       icon: '🧊',
-      sub: 'Single Door • Frost Free • Side-by-Side',
-      desc: 'Doorstep repair for cooling loss, compressor clicking sound, thermostat defects, and Freon gas refilling.',
+      sub: 'Single door • Double door • Side-by-side',
+      desc: 'Not cooling, compressor clicking or ice build-up. Repaired on the spot.',
       href: '/services/refrigerator',
-      highlights: ['Compressor Repair & Overhaul', 'Freon R600a Gas Charging', 'Defrost Timer & Sensor Fix']
+      highlights: ['Not cooling', 'Gas refill', 'Compressor'],
     },
     {
-      title: 'AC Service & Jet Wash',
+      title: 'Air Conditioner',
       icon: '❄️',
-      sub: 'Split AC • Window AC • Inverter PCB',
-      desc: 'High-pressure foam jet cleaning, indoor water dripping fix, copper pipe leak soldering, and eco-friendly gas recharge for peak cooling.',
+      sub: 'Split AC • Window AC • Inverter',
+      desc: 'Weak cooling, water dripping or gas leaks. Foam jet service and repairs.',
       href: '/services/ac-service',
-      highlights: ['Foam Jet Pressure Service', 'Gas Leakage Testing & Refill', 'Inverter PCB Board Repair']
+      highlights: ['Jet service', 'Gas leak & refill', 'Inverter PCB'],
     },
     {
-      title: 'Microwave Oven Repair',
+      title: 'Microwave Oven',
       icon: '🍲',
-      sub: 'Solo • Grill • Convection Ovens',
-      desc: 'Quick repair for magnetron heating issues, unresponsive touchpads, internal sparks, and turntable motor failures.',
+      sub: 'Solo • Grill • Convection',
+      desc: 'Not heating, sparking inside or touchpad not responding.',
       href: '/services/microwave',
-      highlights: ['Magnetron Heating Fix', 'NeoChef Touchpad Panels', 'Sparking Mica Sheet Replacement']
-    }
+      highlights: ['Not heating', 'Sparking', 'Touchpad'],
+    },
+    {
+      title: 'Dryer',
+      icon: '♨️',
+      sub: 'Clothes dryer • Washer dryer',
+      desc: 'Clothes still damp, drum not turning or error codes on the display.',
+      href: '/services/dryer',
+      highlights: ['No heat', 'Drum & belt', 'Error codes'],
+    },
   ];
 
   const applianceTiles = [
@@ -58,6 +105,8 @@ export default function HomePage() {
 
   return (
     <div className="space-y-10 sm:space-y-16 pb-12 sm:pb-16 pt-4 sm:pt-8 bg-white text-stone-900">
+      <JsonLd data={businessSchema} />
+
       {/* Hero Section */}
       <section data-track="hero" className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="glass-card rounded-2xl sm:rounded-3xl p-6 sm:p-10 lg:px-12 lg:py-10 border border-sky-200 bg-sky-50 relative overflow-hidden lg:flex lg:items-center">
@@ -135,51 +184,77 @@ export default function HomePage() {
         <BrandLogos />
       </section>
 
-      {/* Main Services Grid */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 space-y-10">
+      {/* Main Services Grid: one tappable card per appliance, single column on phones */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 space-y-6 sm:space-y-10">
         <div className="text-center max-w-3xl mx-auto space-y-2">
           <span className="text-xs font-bold text-sky-700 uppercase tracking-wider">Expert Doorstep Solutions</span>
           <h2 className="text-2xl sm:text-4xl font-black text-stone-900">Doorstep Appliance Repair Services</h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {mainServices.map((item, idx) => (
-            <div key={idx} className="glass-card glass-card-hover rounded-2xl sm:rounded-3xl p-5 sm:p-8 border border-stone-200 bg-white flex flex-col justify-between space-y-6">
-              <div className="space-y-4">
-                <span className="text-4xl block">{item.icon}</span>
-
-                <div>
-                  <h3 className="text-2xl font-bold text-stone-900">{item.title}</h3>
-                  <span className="text-xs font-bold text-sky-700">{item.sub}</span>
+        <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-5">
+          {mainServices.map((item) => (
+            <li key={item.href}>
+              <Link
+                href={item.href}
+                className="group h-full flex flex-col rounded-2xl border border-stone-200 bg-white p-4 sm:p-5 shadow-xs hover:border-sky-600 hover:shadow-md active:scale-[0.99] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-600 transition-all"
+              >
+                <div className="flex items-center gap-3.5">
+                  <span className="w-14 h-14 shrink-0 rounded-xl bg-sky-50 border border-sky-100 flex items-center justify-center text-3xl" aria-hidden="true">
+                    {item.icon}
+                  </span>
+                  <div className="min-w-0">
+                    <h3 className="text-lg font-bold text-stone-900 leading-tight">{item.title} Repair</h3>
+                    <p className="text-xs font-semibold text-sky-700 mt-0.5">{item.sub}</p>
+                  </div>
                 </div>
 
-                <p className="text-stone-700 text-sm leading-relaxed">{item.desc}</p>
+                <p className="text-stone-700 text-sm leading-relaxed mt-3">{item.desc}</p>
 
-                <div className="space-y-2 pt-2">
-                  <h4 className="text-xs font-bold uppercase tracking-wider text-stone-600">Key Repairs Included:</h4>
-                  <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-stone-700">
-                    {item.highlights.map((feat, i) => (
-                      <li key={i} className="flex items-center gap-1.5">
-                        <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
-                        <span>{feat}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
+                <ul className="flex flex-wrap gap-1.5 mt-3" aria-label="Common repairs">
+                  {item.highlights.map((feat) => (
+                    <li key={feat} className="inline-flex items-center gap-1 rounded-full bg-stone-100 px-2.5 py-1 text-xs font-semibold text-stone-700">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" aria-hidden="true" />
+                      {feat}
+                    </li>
+                  ))}
+                </ul>
 
-              <div className="pt-4 border-t border-stone-200 flex justify-end">
-                <Link
-                  href={item.href}
-                  className="btn-blue-primary w-full sm:w-auto px-6 py-2.5 text-xs font-bold flex items-center justify-center gap-2"
-                >
-                  <span>Book Service</span>
-                  <ChevronRight className="w-4 h-4" />
-                </Link>
-              </div>
-            </div>
+                <span className="mt-auto pt-4">
+                  <span className="flex items-center justify-between border-t border-stone-200 pt-3 text-sm font-extrabold text-sky-700 group-hover:text-sky-800">
+                    View repairs &amp; book
+                    <ChevronRight className="w-5 h-5 transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
+                  </span>
+                </span>
+              </Link>
+            </li>
           ))}
-        </div>
+
+          {/* Catch-all card: fills the empty slot in the 3-column grid */}
+          <li className="rounded-2xl border border-sky-200 bg-sky-50 p-4 sm:p-5 flex flex-col">
+            <h3 className="text-lg font-bold text-stone-900 leading-tight">Not sure what&apos;s wrong?</h3>
+            <p className="text-stone-700 text-sm leading-relaxed mt-2">
+              Tell us the appliance and the problem. We&apos;ll send a technician to check it at your home.
+            </p>
+            <div className="mt-auto pt-4 grid grid-cols-2 gap-2">
+              <a
+                href="tel:+919916207964"
+                className="btn-blue-primary px-3 py-3 text-sm font-extrabold flex items-center justify-center gap-2"
+              >
+                <Phone className="w-4 h-4 fill-white" aria-hidden="true" />
+                <span>Call</span>
+              </a>
+              <a
+                href="https://wa.me/919916207964?text=Hi%20Smart%20Touch%20Appliances,%20I%20need%20an%20appliance%20repaired"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-emerald-700 hover:bg-emerald-800 text-white font-extrabold px-3 py-3 rounded-full text-sm flex items-center justify-center gap-2 transition-colors"
+              >
+                <WhatsAppIcon className="w-4 h-4" />
+                <span>WhatsApp</span>
+              </a>
+            </div>
+          </li>
+        </ul>
       </section>
 
       {/* How We Work */}

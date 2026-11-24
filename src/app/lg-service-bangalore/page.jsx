@@ -1,279 +1,210 @@
-"use client";
-
-import { useState } from 'react';
-import { Phone, CheckCircle2, AlertTriangle, Wrench } from 'lucide-react';
+import Link from 'next/link';
+import { Phone, ChevronRight, Info } from 'lucide-react';
+import ServicePromise from '@/components/ServicePromise';
 import WhatsAppIcon from '@/components/WhatsAppIcon';
+import JsonLd from '@/components/JsonLd';
+
+// LG appliance repair by Smart Touch Appliances, an independent repair service.
+// Keep this page clearly Smart Touch branded: no LG logos, colours, phone numbers or "service centre" claims.
+
+const appliances = [
+  {
+    title: 'LG Washing Machine',
+    icon: '🧺',
+    sub: 'Front load • Top load • Washer dryer',
+    desc: 'Direct Drive motor noise, not spinning, not draining, water leaks and error codes.',
+    href: '/services/washing-machine',
+  },
+  {
+    title: 'LG Refrigerator',
+    icon: '🧊',
+    sub: 'Single door • Double door • Side-by-side',
+    desc: 'Not cooling, inverter compressor faults, ice build-up and gas refilling.',
+    href: '/services/refrigerator',
+  },
+  {
+    title: 'LG Air Conditioner',
+    icon: '❄️',
+    sub: 'Dual Inverter split • Window AC',
+    desc: 'Weak cooling, water dripping, gas leaks, foam jet service and PCB faults.',
+    href: '/services/ac-service',
+  },
+  {
+    title: 'LG Microwave Oven',
+    icon: '🍲',
+    sub: 'Solo • Grill • Convection',
+    desc: 'Not heating, sparking inside and touchpad not responding.',
+    href: '/services/microwave',
+  },
+  {
+    title: 'LG Dryer',
+    icon: '♨️',
+    sub: 'Clothes dryer • Washer dryer',
+    desc: 'Clothes still damp, drum not turning and drying cycle errors.',
+    href: '/services/dryer',
+  },
+];
+
+// Common error codes shown on LG front load and top load washing machines
+const errorCodes = [
+  { code: 'OE', meaning: 'Water is not draining: blocked filter, drain hose or pump.' },
+  { code: 'IE', meaning: 'Water is not filling: tap closed, low pressure or inlet valve fault.' },
+  { code: 'UE', meaning: 'Load is unbalanced, or the machine is not level.' },
+  { code: 'dE', meaning: 'Door is not closing or locking properly.' },
+  { code: 'LE', meaning: 'Motor is locked or overloaded.' },
+  { code: 'PE', meaning: 'Water level (pressure) sensor fault.' },
+  { code: 'tE', meaning: 'Heater or temperature sensor fault.' },
+  { code: 'FE', meaning: 'Too much water in the drum (overflow).' },
+];
+
+const faqs = [
+  {
+    q: 'Are you an LG authorised service centre?',
+    a: 'No. Smart Touch Appliances is an independent repair service and is not affiliated with or authorised by LG Electronics. Our technicians repair LG appliances at your home with a ₹200 inspection charge, an estimate before any work, and a 365-day warranty on our repair.',
+  },
+  {
+    q: 'My LG appliance is still under LG warranty. Should I call you?',
+    a: 'If your appliance is still covered by the LG manufacturer warranty, contact LG first, because repair by an independent technician may affect that warranty. For appliances out of warranty, we can visit and repair it at your home.',
+  },
+  {
+    q: 'Can you fix LG washing machine error codes like OE, UE or dE?',
+    a: 'Yes. Our technician diagnoses the fault behind the error code at your home, gives you an estimate, and repairs it only after you approve.',
+  },
+  {
+    q: 'How much does an LG repair cost?',
+    a: 'The inspection visit is a flat ₹200. After finding the fault, the technician gives you an estimate for the repair before any work begins.',
+  },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map(({ q, a }) => ({
+    '@type': 'Question',
+    name: q,
+    acceptedAnswer: { '@type': 'Answer', text: a },
+  })),
+};
 
 export default function LGServiceBangalorePage() {
-  const [firstName, setFirstName] = useState('');
-  const [mobileNumber, setMobileNumber] = useState('');
-  const [submitted, setSubmitted] = useState(false);
-  const [selectedCategory, setSelectedCategory] = useState('Front Load');
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (mobileNumber) {
-      setSubmitted(true);
-    }
-  };
-
-  const productIcons = [
-    { name: 'Wash Tower', icon: '🧺' },
-    { name: 'Dryers', icon: '♨️' },
-    { name: 'Washer Dryers', icon: '🔄' },
-    { name: 'Front Load', icon: '🧼' },
-    { name: 'Top Load', icon: '🧺' },
-    { name: 'Semi Automatic Washing', icon: '🎛️' }
-  ];
-
   return (
-    <div className="bg-white text-stone-900 min-h-screen font-sans">
-      {/* 1. Top Black Notice Banner (Image 1) */}
-      <div className="bg-[#2d2d2d] text-stone-200 text-xs py-2 px-4 text-center font-medium">
-        Updates to LG Electronics Service Terms of Use and Privacy Policy (12/12/2024)
-      </div>
+    <div className="space-y-10 sm:space-y-16 pb-12 sm:pb-16 pt-4 sm:pt-8 bg-white text-stone-900">
+      <JsonLd data={faqSchema} />
 
-      {/* 2. Header & Booking Form Section (Image 1) */}
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-8 sm:py-12 space-y-8">
-        {/* Authentic LG Brand Logo Header */}
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-          <div className="space-y-2">
-            <div className="flex items-center gap-3">
-              {/* Optimized WebP LG Logo Asset */}
-              <img
-                src="/lg-logo.webp"
-                alt="LG Electronics Logo"
-                className="h-14 sm:h-16 w-auto object-contain shrink-0"
-              />
-            </div>
-            <h1 className="text-2xl sm:text-3xl font-bold text-stone-900 tracking-tight pt-2">
-              Book a service request
+      {/* Hero */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="glass-card rounded-2xl sm:rounded-3xl p-6 sm:p-10 lg:p-12 border border-sky-100 bg-sky-50 text-center">
+          <div className="max-w-3xl mx-auto space-y-4">
+            <span className="inline-block bg-sky-100 text-sky-900 text-xs font-bold px-3.5 py-1 rounded-full uppercase tracking-wider">
+              Independent LG Appliance Repair
+            </span>
+            <h1 className="text-3xl sm:text-5xl font-black text-stone-900">
+              LG Appliance Repair <span className="text-sky-700">In Bangalore</span>
             </h1>
-            <p className="text-stone-500 text-sm">
-              Book a visit from your nearest LG repair service center
+            <p className="text-stone-700 text-base sm:text-lg">
+              Our technicians repair LG washing machines, fridges, ACs, microwaves and dryers at your home.
             </p>
-          </div>
-
-          <div className="flex flex-col items-start md:items-end gap-1">
-            <p className="text-stone-500 text-xs sm:text-sm">
-              We have global service network. Please call our Bengaluru service network number.
+            <ul className="flex flex-wrap justify-center gap-x-4 gap-y-1.5 text-sm font-semibold text-stone-700">
+              <li className="flex items-center gap-1.5"><span aria-hidden="true">🔍</span>₹200 inspection</li>
+              <li className="flex items-center gap-1.5"><span aria-hidden="true">📝</span>Estimate before work</li>
+              <li className="flex items-center gap-1.5"><span aria-hidden="true">🛡️</span>365 days warranty</li>
+            </ul>
+            <div className="pt-2 flex flex-col sm:flex-row justify-center items-stretch sm:items-center gap-3">
+              <a href="tel:+919916207964" className="btn-blue-primary w-full sm:w-auto px-8 py-3.5 text-sm font-extrabold flex items-center justify-center gap-2">
+                <Phone className="w-4 h-4 fill-white" />
+                <span>Call +91 99162 07964</span>
+              </a>
+              <a
+                href="https://wa.me/919916207964?text=Hi%20Smart%20Touch%20Appliances,%20I%20need%20my%20LG%20appliance%20repaired"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-emerald-700 hover:bg-emerald-800 text-white font-extrabold w-full sm:w-auto px-8 py-3.5 rounded-full text-sm flex items-center justify-center gap-2 transition-colors"
+              >
+                <WhatsAppIcon className="w-4 h-4" />
+                <span>WhatsApp Booking</span>
+              </a>
+            </div>
+            <p className="flex items-start justify-center gap-1.5 text-xs text-stone-600 pt-1">
+              <Info className="w-3.5 h-3.5 shrink-0 mt-0.5" aria-hidden="true" />
+              <span>Smart Touch Appliances is an independent repair service, not affiliated with or authorised by LG Electronics.</span>
             </p>
-            <a
-              href="tel:+919916207964"
-              className="bg-[#a50034] hover:bg-[#88002b] text-white font-bold px-6 py-2.5 rounded-full text-sm sm:text-base transition-colors shadow-sm inline-flex items-center gap-2 mt-1"
-            >
-              <span>1800 123 8033</span>
-            </a>
           </div>
         </div>
+      </section>
 
-        {/* Booking Input Bar */}
-        <div className="space-y-4 pt-4">
-          {submitted ? (
-            <div className="bg-emerald-50 border border-emerald-300 p-6 rounded-xl text-center space-y-2">
-              <CheckCircle2 className="w-10 h-10 text-emerald-600 mx-auto" />
-              <h3 className="text-lg font-bold text-emerald-900">Service Request Booked Successfully!</h3>
-              <p className="text-emerald-800 text-xs">
-                Our nearest LG service technician in Bengaluru will call you at <strong>{mobileNumber}</strong> shortly to confirm your visit slot.
-              </p>
-            </div>
-          ) : (
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
-                <div className="md:col-span-6">
-                  <input
-                    type="text"
-                    value={firstName}
-                    onChange={(e) => setFirstName(e.target.value)}
-                    placeholder="Enter Your First Name"
-                    className="w-full px-4 py-3.5 rounded-xl border border-stone-300 text-base sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#a50034] bg-white"
-                  />
-                </div>
-
-                <div className="md:col-span-6 flex items-center border border-stone-300 rounded-xl bg-white overflow-hidden focus-within:ring-2 focus-within:ring-[#a50034]">
-                  <div className="px-3 py-3.5 bg-stone-100 border-r border-stone-300 flex items-center gap-1 text-xs font-bold text-stone-700 shrink-0">
-                    <span>🇮🇳</span>
-                    <span>▼</span>
+      {/* LG appliances we repair */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 space-y-6 sm:space-y-8">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-stone-900 text-center">LG Appliances We Repair</h2>
+        <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-5">
+          {appliances.map((item) => (
+            <li key={item.href}>
+              <Link
+                href={item.href}
+                className="group h-full flex flex-col rounded-2xl border border-stone-200 bg-white p-4 sm:p-5 shadow-xs hover:border-sky-600 hover:shadow-md active:scale-[0.99] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-600 transition-all"
+              >
+                <div className="flex items-center gap-3.5">
+                  <span className="w-14 h-14 shrink-0 rounded-xl bg-sky-50 border border-sky-100 flex items-center justify-center text-3xl" aria-hidden="true">
+                    {item.icon}
+                  </span>
+                  <div className="min-w-0">
+                    <h3 className="text-lg font-bold text-stone-900 leading-tight">{item.title} Repair</h3>
+                    <p className="text-xs font-semibold text-sky-700 mt-0.5">{item.sub}</p>
                   </div>
-                  <input
-                    type="tel"
-                    required
-                    value={mobileNumber}
-                    onChange={(e) => setMobileNumber(e.target.value)}
-                    placeholder="Mobile Number"
-                    className="w-full px-4 py-3.5 text-base sm:text-sm focus:outline-none bg-white"
-                  />
                 </div>
-              </div>
-
-              <button
-                type="submit"
-                className="w-full bg-[#a50034] hover:bg-[#88002b] text-white font-extrabold py-4 rounded-xl text-sm sm:text-base tracking-wider uppercase transition-colors shadow-md flex items-center justify-center gap-2"
-              >
-                <span>BOOK A SERVICE REQUEST</span>
-              </button>
-            </form>
-          )}
-        </div>
-      </div>
-
-      {/* 3. Middle Section: Beige Background with Horizontal Product Line & Need Help? Bar (Image 2) */}
-      <div className="bg-[#f0eee9] py-12 px-4 sm:px-6 space-y-12">
-        <div className="max-w-6xl mx-auto space-y-10">
-          {/* Horizontal Product Category Line */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 text-center">
-            {productIcons.map((prod, idx) => (
-              <button
-                key={idx}
-                onClick={() => setSelectedCategory(prod.name)}
-                className={`p-4 rounded-2xl flex flex-col items-center gap-2 transition-all ${
-                  selectedCategory === prod.name
-                    ? 'bg-white shadow-md border-2 border-[#a50034]'
-                    : 'hover:bg-white/60 text-stone-700'
-                }`}
-              >
-                <div className="w-12 h-12 rounded-xl bg-stone-100 flex items-center justify-center text-2xl">
-                  {prod.icon}
-                </div>
-                <span className="text-xs font-semibold text-stone-700 leading-tight italic">
-                  {prod.name}
+                <p className="text-stone-700 text-sm leading-relaxed mt-3">{item.desc}</p>
+                <span className="mt-auto pt-4">
+                  <span className="flex items-center justify-between border-t border-stone-200 pt-3 text-sm font-extrabold text-sky-700 group-hover:text-sky-800">
+                    View repairs &amp; book
+                    <ChevronRight className="w-5 h-5 transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
+                  </span>
                 </span>
-              </button>
-            ))}
-          </div>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </section>
 
-          {/* Need Help? Bar */}
-          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 pt-4 border-t border-stone-300">
-            <div>
-              <h2 className="text-2xl font-bold text-stone-900">Need Help?</h2>
-              <p className="text-stone-600 text-sm">We're here to help your all need.</p>
-            </div>
-
-            <a
-              href="tel:+919916207964"
-              className="bg-white text-stone-800 border border-stone-400 font-bold px-8 py-2.5 rounded-full text-sm hover:bg-stone-100 transition-colors shadow-xs"
-            >
-              Get Support
-            </a>
-          </div>
-
-          {/* 3 White Contact Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {/* Doorstep visit */}
-            <div className="bg-white p-8 rounded-3xl shadow-xs border border-stone-100 flex items-start gap-4">
-              <div className="w-12 h-12 rounded-xl bg-stone-100 flex items-center justify-center shrink-0">
-                <Wrench className="w-6 h-6 text-stone-800" />
-              </div>
-              <div className="space-y-1">
-                <h3 className="text-base font-bold text-stone-900">Doorstep Visit</h3>
-                <p className="text-stone-500 text-xs leading-relaxed">
-                  Our technician comes to your home and repairs your appliance on the spot.
-                </p>
-              </div>
-            </div>
-
-            {/* WhatsApp */}
-            <div className="bg-white p-8 rounded-3xl shadow-xs border border-stone-100 flex items-start gap-4">
-              <div className="w-12 h-12 rounded-xl bg-stone-100 flex items-center justify-center shrink-0">
-                <WhatsAppIcon className="w-6 h-6 text-stone-800" />
-              </div>
-              <div className="space-y-1">
-                <h3 className="text-base font-bold text-stone-900">WhatsApp</h3>
-                <p className="text-stone-500 text-xs leading-relaxed">
-                  We are on WhatsApp. Text with our experts.
-                </p>
-              </div>
-            </div>
-
-            {/* Call us */}
-            <div className="bg-white p-8 rounded-3xl shadow-xs border border-stone-100 flex items-start gap-4">
-              <div className="w-12 h-12 rounded-xl bg-stone-100 flex items-center justify-center shrink-0">
-                <Phone className="w-6 h-6 text-stone-800" />
-              </div>
-              <div className="space-y-1">
-                <h3 className="text-base font-bold text-stone-900">Call us</h3>
-                <p className="text-stone-500 text-xs leading-relaxed">
-                  We look forward to speaking and providing further LG services.
-                </p>
-              </div>
-            </div>
-          </div>
+      {/* LG washing machine error codes */}
+      <section className="max-w-4xl mx-auto px-4 sm:px-6 space-y-6">
+        <div className="text-center space-y-2">
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-stone-900">LG Washing Machine Error Codes</h2>
+          <p className="text-stone-700 text-sm">Seeing one of these on the display? Here is what it usually means.</p>
         </div>
-      </div>
-
-      {/* 4. "Get professional help from LG experts" 4-Step Process Section (Images 3 & 4) */}
-      <div className="bg-[#f0eee9] py-12 px-4 sm:px-6 border-t border-stone-300">
-        <div className="max-w-6xl mx-auto space-y-8">
-          <h2 className="text-2xl sm:text-3xl font-bold text-stone-900">
-            Get professional help from LG experts
-          </h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Step 1 Card */}
-            <div className="bg-white p-10 rounded-3xl shadow-xs border border-stone-100 flex flex-col items-center text-center space-y-6">
-              <div className="w-48 h-48 relative flex items-center justify-center bg-stone-50 rounded-2xl">
-                <div className="text-7xl">🧺</div>
-                <div className="absolute bottom-2 right-2 bg-amber-400 text-stone-900 p-2 rounded-lg shadow-md font-bold text-xs flex items-center gap-1">
-                  <AlertTriangle className="w-4 h-4 fill-stone-900" />
-                </div>
-              </div>
-              <div className="space-y-1">
-                <h3 className="text-lg font-bold text-stone-900">Step 1</h3>
-                <p className="text-stone-500 text-sm">Choose a product and its symptom.</p>
-              </div>
+        <dl className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          {errorCodes.map(({ code, meaning }) => (
+            <div key={code} className="flex items-start gap-3 rounded-xl border border-stone-200 bg-white p-4">
+              <dt className="w-12 h-12 shrink-0 rounded-lg bg-stone-900 text-amber-300 font-mono font-extrabold text-lg flex items-center justify-center">
+                {code}
+              </dt>
+              <dd className="text-sm text-stone-700 leading-relaxed self-center">{meaning}</dd>
             </div>
+          ))}
+        </dl>
+        <p className="text-center text-xs text-stone-600">
+          Error still showing after a restart? Call us and our technician will diagnose it at your home.
+        </p>
+      </section>
 
-            {/* Step 2 Card */}
-            <div className="bg-white p-10 rounded-3xl shadow-xs border border-stone-100 flex flex-col items-center text-center space-y-6">
-              <div className="w-48 h-48 relative flex items-center justify-center bg-stone-50 rounded-2xl">
-                <div className="text-7xl">💻</div>
-                <div className="absolute top-6 bg-white border border-stone-300 px-3 py-1 rounded-full text-xs font-mono font-bold shadow-xs">
-                  *****|
-                </div>
-              </div>
-              <div className="space-y-1">
-                <h3 className="text-lg font-bold text-stone-900">Step 2</h3>
-                <p className="text-stone-500 text-sm">Enter your contact information and confirm the request.</p>
-              </div>
-            </div>
+      {/* Pricing promise */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6">
+        <ServicePromise />
+      </section>
 
-            {/* Step 3 Card */}
-            <div className="bg-white p-10 rounded-3xl shadow-xs border border-stone-100 flex flex-col items-center text-center space-y-6">
-              <div className="w-48 h-48 relative flex items-center justify-center bg-stone-50 rounded-2xl">
-                <div className="text-7xl">🖥️</div>
-                <div className="absolute top-6 bg-red-600 text-white p-2.5 rounded-full shadow-md">
-                  <CheckCircle2 className="w-5 h-5" />
-                </div>
-              </div>
-              <div className="space-y-1">
-                <h3 className="text-lg font-bold text-stone-900">Step 3</h3>
-                <p className="text-stone-500 text-sm">Check the request status easily online.</p>
-              </div>
-            </div>
-
-            {/* Step 4 Card */}
-            <div className="bg-white p-10 rounded-3xl shadow-xs border border-stone-100 flex flex-col items-center text-center space-y-6">
-              <div className="w-48 h-48 relative flex items-center justify-center bg-stone-50 rounded-2xl">
-                <div className="text-7xl">📺</div>
-                <div className="absolute bottom-2 right-2 bg-stone-900 text-white p-2.5 rounded-xl shadow-md">
-                  <Wrench className="w-5 h-5" />
-                </div>
-              </div>
-              <div className="space-y-1">
-                <h3 className="text-lg font-bold text-stone-900">Step 4</h3>
-                <p className="text-stone-500 text-sm">
-                  Receive certified repair services by trusted experts using genuine LG parts.
-                </p>
-              </div>
-            </div>
-          </div>
+      {/* FAQ */}
+      <section className="max-w-4xl mx-auto px-4 sm:px-6 space-y-6">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-stone-900 text-center">LG Repair Questions</h2>
+        <div className="space-y-3">
+          {faqs.map(({ q, a }) => (
+            <details key={q} className="group rounded-xl border border-stone-200 bg-white p-4 open:border-sky-300">
+              <summary className="cursor-pointer list-none flex items-center justify-between gap-3 font-bold text-stone-900">
+                {q}
+                <ChevronRight className="w-5 h-5 shrink-0 text-stone-500 transition-transform group-open:rotate-90" aria-hidden="true" />
+              </summary>
+              <p className="mt-3 text-sm text-stone-700 leading-relaxed">{a}</p>
+            </details>
+          ))}
         </div>
-      </div>
-
-      {/* 5. Dark Footer Banner */}
-      <div className="bg-[#2d2d2d] text-stone-400 text-xs py-4 px-4 text-center">
-        Copyright © 2009-2024 LG Electronics. All Rights Reserved
-      </div>
+      </section>
     </div>
   );
 }

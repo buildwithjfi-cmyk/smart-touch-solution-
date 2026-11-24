@@ -5,6 +5,7 @@ import ServicePromise from '@/components/ServicePromise';
 import WhatsAppIcon from '@/components/WhatsAppIcon';
 
 export const metadata = {
+  alternates: { canonical: '/services' },
   title: 'Doorstep Appliance Repair Services Bangalore | Washing Machine, Fridge & AC Care',
   description: 'Complete range of doorstep home appliance repair services in Bangalore. Doorstep repair for Washing Machines, Refrigerators, Inverter ACs, Microwaves, and Dryers. Call +91 99162 07964.',
 };
@@ -12,14 +13,14 @@ export const metadata = {
 export default function ServicesPage() {
   const servicesList = [
     {
-      title: 'LG Specialized Appliance Service',
+      title: 'LG Appliance Repair',
       icon: '🏆',
       models: 'LG Direct Drive • Smart Inverter • Dual Inverter AC • NeoChef',
-      desc: 'Specialized diagnostic hub for all LG home appliances. Fix OE, UE, dE, PE error codes, Direct Drive motor noise, and Inverter gas refills using genuine LG parts.',
+      desc: 'Independent doorstep repair for LG home appliances. We fix OE, UE, dE and PE error codes, Direct Drive motor noise, and inverter AC and fridge faults.',
       price: 'Inspection ₹200',
       warranty: '365 Days Warranty After Repair',
       href: '/lg-service-bangalore',
-      highlights: ['LG OEM Genuine Parts', 'Digital Error Code Fixes', 'Smart Inverter Gas Refilling', 'Doorstep Service']
+      highlights: ['Error Code Fixes', 'Direct Drive Motors', 'Inverter Gas Refilling', 'Doorstep Service']
     },
     {
       title: 'Washing Machine Repair Service',

@@ -1,7 +1,9 @@
 import { HelpCircle, Phone } from 'lucide-react';
 import WhatsAppIcon from '@/components/WhatsAppIcon';
+import JsonLd from '@/components/JsonLd';
 
 export const metadata = {
+  alternates: { canonical: '/contact/faq' },
   title: 'Frequently Asked Questions & Support | Smart Touch Appliances Bangalore',
   description: 'Find answers to common questions about appliance repair response times, inspection charges, estimates, and warranty. Call +91 99162 07964.',
 };
@@ -15,8 +17,21 @@ export default function FAQPage() {
     { q: 'What warranty do I get after a repair?', a: 'Every repair we complete comes with a 365-day warranty.' }
   ];
 
+  // Built from the same questions shown on the page, as Google requires
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map(({ q, a }) => ({
+      '@type': 'Question',
+      name: q,
+      acceptedAnswer: { '@type': 'Answer', text: a },
+    })),
+  };
+
   return (
     <div className="space-y-10 sm:space-y-16 pb-12 sm:pb-16 pt-4 sm:pt-8 bg-white text-stone-900">
+      <JsonLd data={faqSchema} />
+
       <section className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="glass-card rounded-2xl sm:rounded-3xl p-6 sm:p-10 lg:p-12 border border-sky-100 bg-sky-50 text-center">
           <div className="max-w-3xl mx-auto space-y-4">

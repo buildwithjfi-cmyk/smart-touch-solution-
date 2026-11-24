@@ -3,6 +3,7 @@ import { MapPin, Phone, CheckCircle2 } from 'lucide-react';
 import WhatsAppIcon from '@/components/WhatsAppIcon';
 
 export const metadata = {
+  alternates: { canonical: '/coverage/north-bangalore' },
   title: 'North Bangalore Appliance Repair | Hebbal, Yelahanka, Kalyan Nagar',
   description: 'Doorstep repair for washing machines, fridges & ACs in North Bangalore including Hebbal, Yelahanka, Kalyan Nagar, RT Nagar & Thanisandra. Call +91 99162 07964.',
 };

@@ -7,6 +7,8 @@ const nextConfig = {
     return [
       { source: '/shop/refurbished-washing-machines', destination: '/services/washing-machine', permanent: true },
       { source: '/shop/refurbished-refrigerators', destination: '/services/refrigerator', permanent: true },
+      { source: '/shop', destination: '/services', permanent: true },
+      { source: '/shop/:path*', destination: '/services', permanent: true },
       { source: '/about/quality-inspection', destination: '/about/pricing-policy', permanent: true },
     ];
   },

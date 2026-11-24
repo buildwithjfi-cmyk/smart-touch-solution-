@@ -1,19 +1,22 @@
+const title = 'LG Appliance Repair in Bangalore | Independent Doorstep Technicians';
+const description = 'Doorstep repair for LG washing machines, refrigerators, ACs, microwaves and dryers in Bangalore by Smart Touch Appliances, an independent repair service. ₹200 inspection, estimate before work, 365 days warranty. Call +91 99162 07964.';
+
 export const metadata = {
-  metadataBase: new URL('https://www.smarttouchappliances.com'),
-  title: 'LG Appliance Repair Service Center Bengaluru | Book Service Visit',
-  description: 'Book visit from your nearest LG repair service center in Bengaluru for washing machines, refrigerators, ACs, and microwaves. Certified experts & genuine LG parts.',
+  title,
+  description,
+  alternates: { canonical: '/lg-service-bangalore' },
   openGraph: {
-    title: 'LG Appliance Repair Service Center Bengaluru | Book Service Visit',
-    description: 'Book visit from your nearest LG repair service center in Bengaluru for washing machines, refrigerators, ACs, and microwaves. Certified experts & genuine LG parts.',
+    title,
+    description,
     url: 'https://www.smarttouchappliances.com/lg-service-bangalore',
-    siteName: 'LG Electronics Service Network Bengaluru',
+    siteName: 'Smart Touch Appliances',
     images: [
       {
-        url: '/lg-whatsapp-image.webp',
+        url: '/homepage-whatsapp-image.webp',
         width: 1200,
         height: 630,
         type: 'image/webp',
-        alt: 'LG Service Bangalore WhatsApp Preview Image',
+        alt: 'Smart Touch Appliances doorstep appliance repair in Bangalore',
       },
     ],
     locale: 'en_IN',
@@ -21,9 +24,9 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'LG Appliance Repair Service Center Bengaluru',
-    description: 'Book visit from your nearest LG repair service center in Bengaluru. Certified experts & genuine LG parts.',
-    images: ['/lg-whatsapp-image.webp'],
+    title,
+    description,
+    images: ['/homepage-whatsapp-image.webp'],
   },
 };
 

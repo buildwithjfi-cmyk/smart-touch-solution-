@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { Phone, Wrench, Menu, X, ChevronDown, ShieldCheck, MapPin, Tag, HelpCircle, HeartHandshake, Award } from 'lucide-react';
+import { Phone, Wrench, Menu, X, ChevronDown, ShieldCheck, MapPin, HelpCircle, HeartHandshake, Award } from 'lucide-react';
 import WhatsAppIcon from '@/components/WhatsAppIcon';
 
 export default function Navbar() {
@@ -96,8 +96,8 @@ export default function Navbar() {
                 <Link href="/lg-service-bangalore" className="flex items-center gap-2.5 p-2.5 rounded-xl bg-sky-50 hover:bg-sky-100 text-sky-900 transition-colors text-xs font-bold border border-sky-200">
                   <Award className="w-4 h-4 text-sky-700 shrink-0" />
                   <div>
-                    <span className="block text-sky-900">LG Service Bangalore</span>
-                    <span className="text-[10px] font-semibold text-sky-700">Specialized LG Repairs • All Error Codes</span>
+                    <span className="block text-sky-900">LG Appliance Repair</span>
+                    <span className="text-[10px] font-semibold text-sky-700">Independent technicians • Error code fixes</span>
                   </div>
                 </Link>
                 <Link href="/services/washing-machine" className="flex items-center gap-2.5 p-2.5 rounded-xl hover:bg-sky-50 hover:text-sky-800 transition-colors text-xs font-bold text-stone-800">
@@ -140,31 +140,6 @@ export default function Navbar() {
                     View All Services →
                   </Link>
                 </div>
-              </div>
-            </div>
-
-            {/* Appliance Store Dropdown */}
-            <div className="relative group py-2">
-              <Link href="/shop" className="hover:text-sky-600 transition-colors flex items-center gap-1">
-                <span>Appliance Store</span>
-                <ChevronDown className="w-4 h-4 text-stone-500 group-hover:rotate-180 transition-transform" />
-              </Link>
-
-              <div className="absolute top-full left-0 w-72 bg-white border border-stone-200 rounded-2xl shadow-xl p-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 space-y-1">
-                <Link href="/shop/new-appliances" className="flex items-center gap-2.5 p-2.5 rounded-xl hover:bg-sky-50 hover:text-sky-800 transition-colors text-xs font-bold text-stone-800">
-                  <Tag className="w-4 h-4 text-sky-600 shrink-0" />
-                  <div>
-                    <span className="block">Brand New Appliances</span>
-                    <span className="text-[10px] font-medium text-stone-600">Factory Sealed • Full Warranty</span>
-                  </div>
-                </Link>
-                <Link href="/shop/exchange" className="flex items-center gap-2.5 p-2.5 rounded-xl hover:bg-emerald-50 hover:text-emerald-900 transition-colors text-xs font-bold text-stone-800">
-                  <span className="text-base">♻️</span>
-                  <div>
-                    <span className="block">Old Appliance Exchange</span>
-                    <span className="text-[10px] font-medium text-stone-600">Trade In Your Old Appliance</span>
-                  </div>
-                </Link>
               </div>
             </div>
 
@@ -286,29 +261,12 @@ export default function Navbar() {
               </button>
               {activeMobileDropdown === 'services' && (
                 <div className="pl-4 pr-2 py-1 text-sm font-semibold bg-stone-50 rounded-lg">
-                  <Link href="/lg-service-bangalore" onClick={() => setMobileMenuOpen(false)} className="block px-2 py-3 text-sky-900 font-extrabold">LG Service Bangalore</Link>
+                  <Link href="/lg-service-bangalore" onClick={() => setMobileMenuOpen(false)} className="block px-2 py-3 text-sky-900 font-extrabold">LG Appliance Repair</Link>
                   <Link href="/services/washing-machine" onClick={() => setMobileMenuOpen(false)} className="block px-2 py-3 text-stone-700 hover:text-sky-700">Washing Machine Repair</Link>
                   <Link href="/services/refrigerator" onClick={() => setMobileMenuOpen(false)} className="block px-2 py-3 text-stone-700 hover:text-sky-700">Refrigerator Repair</Link>
                   <Link href="/services/ac-service" onClick={() => setMobileMenuOpen(false)} className="block px-2 py-3 text-stone-700 hover:text-sky-700">AC Service & Jet Wash</Link>
                   <Link href="/services/microwave" onClick={() => setMobileMenuOpen(false)} className="block px-2 py-3 text-stone-700 hover:text-sky-700">Microwave Repair</Link>
                   <Link href="/services/dryer" onClick={() => setMobileMenuOpen(false)} className="block px-2 py-3 text-stone-700 hover:text-sky-700">Dryer Repair</Link>
-                </div>
-              )}
-            </div>
-
-            {/* Mobile Store Sub-Menu */}
-            <div>
-              <button
-                onClick={() => toggleMobileDropdown('shop')}
-                className="w-full flex items-center justify-between text-stone-800 font-semibold px-3 py-3 hover:bg-stone-100 rounded-lg text-base"
-              >
-                <span>Appliance Store</span>
-                <ChevronDown className={`w-4 h-4 transition-transform ${activeMobileDropdown === 'shop' ? 'rotate-180' : ''}`} />
-              </button>
-              {activeMobileDropdown === 'shop' && (
-                <div className="pl-4 pr-2 py-1 text-sm font-semibold bg-stone-50 rounded-lg">
-                  <Link href="/shop/new-appliances" onClick={() => setMobileMenuOpen(false)} className="block px-2 py-3 text-sky-800">Brand New Appliances</Link>
-                  <Link href="/shop/exchange" onClick={() => setMobileMenuOpen(false)} className="block px-2 py-3 text-emerald-800">Old Appliance Exchange</Link>
                 </div>
               )}
             </div>

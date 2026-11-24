@@ -3,6 +3,7 @@ import ServicePromise from '@/components/ServicePromise';
 import WhatsAppIcon from '@/components/WhatsAppIcon';
 
 export const metadata = {
+  alternates: { canonical: '/services/dryer' },
   title: 'Dryer Repair Bangalore | Clothes Dryer & Washer Dryer Service',
   description: 'Doorstep clothes dryer and washer dryer repair in Bangalore. Fix no heat, drum not turning, long drying times and error codes. ₹200 inspection, estimate before work, 365 days warranty. Call +91 99162 07964.',
 };

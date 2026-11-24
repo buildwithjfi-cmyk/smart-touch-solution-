@@ -4,6 +4,7 @@ import ServicePromise from '@/components/ServicePromise';
 import WhatsAppIcon from '@/components/WhatsAppIcon';
 
 export const metadata = {
+  alternates: { canonical: '/services/refrigerator' },
   title: 'Refrigerator & Fridge Repair Bangalore | Single & Double Door Service',
   description: 'Expert doorstep fridge repair in Bangalore. Cooling loss, gas refill, compressor replacement, thermostat fixes for LG, Samsung, Panasonic & Hitachi. Call +91 99162 07964.',
 };

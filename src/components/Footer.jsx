@@ -98,12 +98,6 @@ export default function Footer() {
               </Link>
             </li>
             <li>
-              <Link href="/shop/new-appliances" className="hover:text-amber-700 transition-colors flex items-center gap-1.5">
-                <ChevronRight className="w-3.5 h-3.5 text-amber-700" />
-                <span>New Appliance Sales</span>
-              </Link>
-            </li>
-            <li>
               <Link href="/coverage" className="hover:text-amber-700 transition-colors flex items-center gap-1.5">
                 <ChevronRight className="w-3.5 h-3.5 text-amber-700" />
                 <span>Areas We Serve</span>

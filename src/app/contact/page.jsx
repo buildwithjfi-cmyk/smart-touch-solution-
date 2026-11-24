@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from 'react';
-import { Phone, MapPin, Clock, ShieldCheck, CheckCircle2, Award, Send } from 'lucide-react';
+import { Phone, MapPin, Clock, ShieldCheck, CheckCircle2, Award } from 'lucide-react';
 import AreaCheckerWidget from '@/components/AreaCheckerWidget';
 import WhatsAppIcon from '@/components/WhatsAppIcon';
 
@@ -15,8 +15,32 @@ export default function ContactPage() {
     issue: ''
   });
 
+  // No server: the form builds a WhatsApp message and opens it, so the
+  // booking lands in our normal WhatsApp chats for free.
+  const buildWhatsAppUrl = () => {
+    const lines = [
+      'Hi Smart Touch Appliances, I would like to book a doorstep repair.',
+      '',
+      `Name: ${formData.name.trim()}`,
+      `Phone: ${formData.phone.trim()}`,
+      `Area: ${formData.locality.trim()}`,
+      `Appliance: ${formData.appliance}`,
+    ];
+    if (formData.issue.trim()) lines.push(`Problem: ${formData.issue.trim()}`);
+    return `https://wa.me/919916207964?text=${encodeURIComponent(lines.join('\n'))}`;
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (typeof window.gtag === 'function') {
+      window.gtag('event', 'whatsapp_click', {
+        link_location: 'contact_form',
+        link_text: 'Send booking on WhatsApp',
+        page_path: window.location.pathname,
+        transport_type: 'beacon',
+      });
+    }
+    window.open(buildWhatsAppUrl(), '_blank', 'noopener');
     setSubmitted(true);
   };
 
@@ -59,23 +83,42 @@ export default function ContactPage() {
         <div className="lg:col-span-7 glass-card p-5 sm:p-8 rounded-2xl sm:rounded-3xl border border-stone-200 bg-white space-y-6">
           <div>
             <h2 className="text-2xl font-bold text-stone-900">Book a Doorstep Visit</h2>
-            <p className="text-stone-700 text-xs">Fill in your details and we will call you back to fix a visit time.</p>
+            <p className="text-stone-700 text-xs">Fill in your details and tap send. WhatsApp opens with your booking ready, just press send there.</p>
           </div>
 
           {submitted ? (
             <div className="bg-emerald-50 border border-emerald-300 p-6 rounded-2xl text-center space-y-2">
               <CheckCircle2 className="w-10 h-10 text-emerald-600 mx-auto" />
-              <h3 className="text-lg font-bold text-emerald-900">Booking Request Received!</h3>
-              <p className="text-emerald-800 text-xs">Our nearest Bangalore technician will call you shortly at <strong>{formData.phone}</strong> to confirm your visit.</p>
+              <h3 className="text-lg font-bold text-emerald-900">Almost done: press send in WhatsApp</h3>
+              <p className="text-emerald-800 text-xs">Your booking message is ready in WhatsApp. Once you send it, we will call you at <strong>{formData.phone}</strong> to fix a visit time.</p>
+              <div className="pt-2 flex flex-col sm:flex-row justify-center gap-2">
+                <a
+                  href={buildWhatsAppUrl()}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-emerald-700 hover:bg-emerald-800 text-white font-extrabold px-6 py-3 rounded-full text-sm flex items-center justify-center gap-2 transition-colors"
+                >
+                  <WhatsAppIcon className="w-4 h-4" />
+                  <span>WhatsApp didn&apos;t open? Tap here</span>
+                </a>
+                <button
+                  type="button"
+                  onClick={() => setSubmitted(false)}
+                  className="px-6 py-3 rounded-full text-sm font-bold text-stone-700 border border-stone-300 hover:bg-white transition-colors"
+                >
+                  Edit details
+                </button>
+              </div>
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-bold text-stone-700 mb-1">Your Full Name *</label>
+                  <label htmlFor="cf-name" className="block text-xs font-bold text-stone-700 mb-1">Your Full Name *</label>
                   <input
                     type="text"
                     required
+                    id="cf-name"
                     value={formData.name}
                     onChange={(e) => setFormData({...formData, name: e.target.value})}
                     placeholder="e.g. Rahul Sharma"
@@ -83,10 +126,11 @@ export default function ContactPage() {
                   />
                 </div>
                 <div>
-                  <label className="block text-xs font-bold text-stone-700 mb-1">Phone / Mobile Number *</label>
+                  <label htmlFor="cf-phone" className="block text-xs font-bold text-stone-700 mb-1">Phone / Mobile Number *</label>
                   <input
                     type="tel"
                     required
+                    id="cf-phone"
                     value={formData.phone}
                     onChange={(e) => setFormData({...formData, phone: e.target.value})}
                     placeholder="+91 98765 43210"
@@ -97,10 +141,11 @@ export default function ContactPage() {
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-bold text-stone-700 mb-1">Bangalore Locality *</label>
+                  <label htmlFor="cf-locality" className="block text-xs font-bold text-stone-700 mb-1">Bangalore Locality *</label>
                   <input
                     type="text"
                     required
+                    id="cf-locality"
                     value={formData.locality}
                     onChange={(e) => setFormData({...formData, locality: e.target.value})}
                     placeholder="e.g. Indiranagar, HSR, Whitefield"
@@ -108,8 +153,9 @@ export default function ContactPage() {
                   />
                 </div>
                 <div>
-                  <label className="block text-xs font-bold text-stone-700 mb-1">Appliance Type *</label>
+                  <label htmlFor="cf-appliance" className="block text-xs font-bold text-stone-700 mb-1">Appliance Type *</label>
                   <select
+                    id="cf-appliance"
                     value={formData.appliance}
                     onChange={(e) => setFormData({...formData, appliance: e.target.value})}
                     className="w-full px-4 py-3 rounded-xl border border-stone-300 text-base sm:text-sm focus:ring-2 focus:ring-sky-500 focus:outline-none bg-white"
@@ -118,16 +164,17 @@ export default function ContactPage() {
                     <option>Refrigerator / Fridge</option>
                     <option>Air Conditioner (AC)</option>
                     <option>Microwave Oven</option>
-                    <option>LG Specialized Service</option>
+                    <option>Dryer / Washer Dryer</option>
                   </select>
                 </div>
               </div>
 
               <div>
-                <label className="block text-xs font-bold text-stone-700 mb-1">Describe Issue (Optional)</label>
+                <label htmlFor="cf-issue" className="block text-xs font-bold text-stone-700 mb-1">Describe Issue (Optional)</label>
                 <textarea
                   rows="3"
-                  value={formData.issue}
+                  id="cf-issue"
+                    value={formData.issue}
                   onChange={(e) => setFormData({...formData, issue: e.target.value})}
                   placeholder="e.g. Machine making drum noise, cooling loss, water leak..."
                   className="w-full px-4 py-3 rounded-xl border border-stone-300 text-base sm:text-sm focus:ring-2 focus:ring-sky-500 focus:outline-none"
@@ -136,10 +183,10 @@ export default function ContactPage() {
 
               <button
                 type="submit"
-                className="btn-blue-primary w-full py-3.5 text-sm font-extrabold flex items-center justify-center gap-2"
+                className="w-full bg-emerald-700 hover:bg-emerald-800 text-white rounded-full py-3.5 text-sm font-extrabold flex items-center justify-center gap-2 transition-colors"
               >
-                <Send className="w-4 h-4" />
-                <span>Request Doorstep Visit</span>
+                <WhatsAppIcon className="w-4 h-4" />
+                <span>Send Booking on WhatsApp</span>
               </button>
             </form>
           )}

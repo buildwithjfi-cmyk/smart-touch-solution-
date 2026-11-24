@@ -4,6 +4,7 @@ import ServicePromise from '@/components/ServicePromise';
 import WhatsAppIcon from '@/components/WhatsAppIcon';
 
 export const metadata = {
+  alternates: { canonical: '/services/washing-machine' },
   title: 'Washing Machine Repair Bangalore | Front Load & Top Load Service',
   description: 'Doorstep washing machine repair in Bangalore. Fix spin motor failure, water leaks, drum noise, and PCB faults for LG, Samsung, Bosch, IFB & Siemens. Call +91 99162 07964.',
 };

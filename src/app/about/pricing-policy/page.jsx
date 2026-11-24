@@ -1,6 +1,7 @@
 import { ShieldCheck } from 'lucide-react';
 
 export const metadata = {
+  alternates: { canonical: '/about/pricing-policy' },
   title: 'Pricing & Warranty Policy | Smart Touch Appliances',
   description: '₹200 inspection charge, a clear estimate before any work begins, and 365 days warranty after repair. Doorstep appliance repair in Bangalore. Call +91 99162 07964.',
 };

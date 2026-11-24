@@ -4,6 +4,7 @@ import ServicePromise from '@/components/ServicePromise';
 import WhatsAppIcon from '@/components/WhatsAppIcon';
 
 export const metadata = {
+  alternates: { canonical: '/services/microwave' },
   title: 'Microwave Oven Repair Bangalore | Solo, Grill & Convection Fix',
   description: 'Fast doorstep microwave oven repair in Bangalore. Fix magnetron heating, touchpad buttons, internal sparks, and turntable motor. Call +91 99162 07964.',
 };

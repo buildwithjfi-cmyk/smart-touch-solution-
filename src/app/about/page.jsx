@@ -3,6 +3,7 @@ import Link from 'next/link';
 import WhatsAppIcon from '@/components/WhatsAppIcon';
 
 export const metadata = {
+  alternates: { canonical: '/about' },
   title: 'About Smart Touch Appliances | Doorstep Appliance Repair in Bangalore',
   description: 'Learn about Smart Touch Appliances - doorstep home appliance repair in Bangalore. ₹200 inspection, estimate before work, 365 days warranty after repair. Call +91 99162 07964.',
 };

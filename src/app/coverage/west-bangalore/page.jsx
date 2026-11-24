@@ -3,6 +3,7 @@ import { MapPin, Phone, CheckCircle2 } from 'lucide-react';
 import WhatsAppIcon from '@/components/WhatsAppIcon';
 
 export const metadata = {
+  alternates: { canonical: '/coverage/west-bangalore' },
   title: 'West & Central Bangalore Appliance Repair | Malleshwaram, Rajajinagar',
   description: 'Fast doorstep appliance repair in West & Central Bangalore including Malleshwaram, Rajajinagar, Vijayanagar, Basaveshwaranagar & MG Road. Call +91 99162 07964.',
 };

@@ -4,6 +4,7 @@ import ServicePromise from '@/components/ServicePromise';
 import WhatsAppIcon from '@/components/WhatsAppIcon';
 
 export const metadata = {
+  alternates: { canonical: '/services/ac-service' },
   title: 'AC Servicing & Gas Leak Refill Bangalore | Split & Window AC Repair',
   description: 'High pressure jet wash AC cleaning and Freon gas leak repair in Bangalore. Daikin, LG, Voltas & Samsung AC service at your doorstep. Call +91 99162 07964.',
 };

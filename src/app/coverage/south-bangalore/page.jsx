@@ -3,6 +3,7 @@ import { MapPin, Phone, CheckCircle2 } from 'lucide-react';
 import WhatsAppIcon from '@/components/WhatsAppIcon';
 
 export const metadata = {
+  alternates: { canonical: '/coverage/south-bangalore' },
   title: 'South Bangalore Appliance Repair | Koramangala, Jayanagar, HSR, E-City',
   description: 'Doorstep washing machine, fridge & AC repair in South Bangalore covering Koramangala, HSR Layout, JP Nagar, Jayanagar & Electronic City. Call +91 99162 07964.',
 };
