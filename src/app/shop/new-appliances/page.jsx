@@ -19,7 +19,7 @@ export default function NewAppliancesPage() {
               New Home Appliances In <span className="text-sky-700">Bangalore</span>
             </h1>
             <p className="text-stone-700 text-base sm:text-lg">
-              Brand new LG, Samsung, Whirlpool, Bosch, and Daikin appliances with manufacturer warranty. Call or WhatsApp us for models and availability.
+              Brand new LG, Samsung, Bosch, and Daikin appliances with manufacturer warranty. Call or WhatsApp us for models and availability.
             </p>
             <div className="pt-2 flex flex-col sm:flex-row justify-center items-stretch sm:items-center gap-3">
               <a href="tel:+919916207964" className="btn-blue-primary w-full sm:w-auto px-8 py-3.5 text-sm font-extrabold flex items-center justify-center gap-2">

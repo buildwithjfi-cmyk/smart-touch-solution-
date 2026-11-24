@@ -3,6 +3,7 @@ import { Phone, CheckCircle2, Award, ChevronRight } from 'lucide-react';
 import HeroImage from '@/components/HeroImage';
 import AreaCheckerWidget from '@/components/AreaCheckerWidget';
 import HowWeWork from '@/components/HowWeWork';
+import BrandLogos from '@/components/BrandLogos';
 import WhatsAppIcon from '@/components/WhatsAppIcon';
 
 export const metadata = {
@@ -129,9 +130,9 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* How We Work */}
+      {/* Brands we repair: logo ticker */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6">
-        <HowWeWork />
+        <BrandLogos />
       </section>
 
       {/* Main Services Grid */}
@@ -139,7 +140,6 @@ export default function HomePage() {
         <div className="text-center max-w-3xl mx-auto space-y-2">
           <span className="text-xs font-bold text-sky-700 uppercase tracking-wider">Expert Doorstep Solutions</span>
           <h2 className="text-2xl sm:text-4xl font-black text-stone-900">Doorstep Appliance Repair Services</h2>
-          <p className="text-stone-700 text-sm">We repair LG, Samsung, Whirlpool, Bosch, IFB and other major brands.</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -180,6 +180,11 @@ export default function HomePage() {
             </div>
           ))}
         </div>
+      </section>
+
+      {/* How We Work */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6">
+        <HowWeWork />
       </section>
 
       {/* Locality Coverage Checker Widget */}

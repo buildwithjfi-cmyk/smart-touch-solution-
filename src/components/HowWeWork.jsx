@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { Phone, Home, ClipboardCheck, Wrench, ShieldCheck, ChevronLeft, ChevronRight, Pause, Play } from 'lucide-react';
 
-const AUTOPLAY_MS = 4000;       // time on each step
+const AUTOPLAY_MS = 2000;       // time on each step
 const RESUME_AFTER_MS = 8000;   // wait after the visitor touches it before moving again
 import WhatsAppIcon from '@/components/WhatsAppIcon';
 
@@ -161,7 +161,6 @@ export default function HowWeWork() {
   const [userPaused, setUserPaused] = useState(false);   // pause button
   const [reduceMotion, setReduceMotion] = useState(false);
   const holdUntil = useRef(0);       // pause briefly after the visitor interacts
-  const hovering = useRef(false);
   const onScreen = useRef(true);
 
   useEffect(() => { activeRef.current = active; }, [active]);
@@ -179,7 +178,7 @@ export default function HowWeWork() {
   useEffect(() => {
     const el = rootRef.current;
     if (!el || !('IntersectionObserver' in window)) return;
-    const io = new IntersectionObserver(([entry]) => { onScreen.current = entry.isIntersecting; }, { threshold: 0.4 });
+    const io = new IntersectionObserver(([entry]) => { onScreen.current = entry.isIntersecting; }, { threshold: 0.2 });
     io.observe(el);
     return () => io.disconnect();
   }, []);
@@ -220,7 +219,7 @@ export default function HowWeWork() {
   useEffect(() => {
     if (userPaused || reduceMotion) return;
     const id = setInterval(() => {
-      if (document.hidden || hovering.current || !onScreen.current) return;
+      if (document.hidden || !onScreen.current) return;
       if (Date.now() < holdUntil.current) return;
       goTo(activeRef.current + 1, false);
     }, AUTOPLAY_MS);
@@ -283,8 +282,6 @@ export default function HowWeWork() {
       ref={rootRef}
       data-track="how_we_work"
       className="space-y-6 sm:space-y-8"
-      onMouseEnter={() => { hovering.current = true; }}
-      onMouseLeave={() => { hovering.current = false; }}
       onFocusCapture={holdForVisitor}
     >
       <div className="flex items-end justify-between gap-4">
@@ -336,8 +333,8 @@ export default function HowWeWork() {
               className="snap-start shrink-0 w-[82%] sm:w-[calc(50%-0.5rem)] lg:w-[calc(33.333%-0.667rem)]"
             >
               <div className="h-full rounded-2xl bg-white border border-stone-200 shadow-[0_1px_3px_rgba(16,34,58,0.06)] p-2.5 flex flex-col">
-                {/* Photo header (public/how-we-work/step-N.jpg); the illustration shows until the photo exists */}
-                <StepImage src={`/how-we-work/step-${idx + 1}.jpg`} alt={title} art={art} last={last} />
+                {/* Photo header (public/smart-touch-steps/step-N.webp); the illustration shows until the photo exists */}
+                <StepImage src={`/smart-touch-steps/step-${idx + 1}.webp`} alt={title} art={art} last={last} />
                 <div className="px-2.5 pt-4 pb-2.5 space-y-1.5">
                   <div className="flex items-center gap-2.5">
                     <span

@@ -25,7 +25,7 @@ export default function ServicesPage() {
       title: 'Washing Machine Repair Service',
       icon: '🧺',
       models: 'Front Load • Top Load • Semi-Automatic',
-      desc: 'Fix spinning motor failures, water leaks, drum noise, PCB electronics, and door latch locks across LG, Samsung, Whirlpool, Bosch, and IFB machines.',
+      desc: 'Fix spinning motor failures, water leaks, drum noise, PCB electronics, and door latch locks across LG, Samsung, Bosch, IFB, and Siemens machines.',
       price: 'Inspection ₹200',
       warranty: '365 Days Warranty After Repair',
       href: '/services/washing-machine',

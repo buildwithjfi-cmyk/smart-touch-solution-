@@ -5,7 +5,7 @@ import WhatsAppIcon from '@/components/WhatsAppIcon';
 
 export const metadata = {
   title: 'Refrigerator & Fridge Repair Bangalore | Single & Double Door Service',
-  description: 'Expert doorstep fridge repair in Bangalore. Cooling loss, gas refill, compressor replacement, thermostat fixes for LG, Samsung, Whirlpool & Godrej. Call +91 99162 07964.',
+  description: 'Expert doorstep fridge repair in Bangalore. Cooling loss, gas refill, compressor replacement, thermostat fixes for LG, Samsung, Panasonic & Hitachi. Call +91 99162 07964.',
 };
 
 export default function RefrigeratorRepairPage() {

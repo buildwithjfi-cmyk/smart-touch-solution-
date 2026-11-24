@@ -117,3 +117,19 @@ body {
 /* Horizontal carousels: keep swipe/scroll, hide the scrollbar */
 .no-scrollbar { scrollbar-width: none; -ms-overflow-style: none; }
 .no-scrollbar::-webkit-scrollbar { display: none; }
+
+/* Brand logo ticker: two identical copies of the list scroll left, looping at -50% */
+@keyframes brand-ticker {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.brand-ticker-track { animation: brand-ticker 30s linear infinite; }
+.brand-ticker:hover .brand-ticker-track { animation-play-state: paused; }
+.brand-ticker {
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+  mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+}
+@media (prefers-reduced-motion: reduce) {
+  .brand-ticker { overflow-x: auto; }
+  .brand-ticker-track { animation: none; }
+}

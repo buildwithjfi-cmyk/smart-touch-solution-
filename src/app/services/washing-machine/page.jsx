@@ -5,7 +5,7 @@ import WhatsAppIcon from '@/components/WhatsAppIcon';
 
 export const metadata = {
   title: 'Washing Machine Repair Bangalore | Front Load & Top Load Service',
-  description: 'Doorstep washing machine repair in Bangalore. Fix spin motor failure, water leaks, drum noise, and PCB faults for LG, Samsung, Whirlpool, Bosch & IFB. Call +91 99162 07964.',
+  description: 'Doorstep washing machine repair in Bangalore. Fix spin motor failure, water leaks, drum noise, and PCB faults for LG, Samsung, Bosch, IFB & Siemens. Call +91 99162 07964.',
 };
 
 export default function WashingMachineRepairPage() {

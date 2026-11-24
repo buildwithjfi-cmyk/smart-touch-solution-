@@ -18,7 +18,7 @@ export default function ShopPage() {
             </h1>
 
             <p className="text-stone-700 text-base sm:text-xl leading-relaxed">
-              Brand new LG, Samsung, Whirlpool, Bosch & Daikin appliances with full manufacturer warranty, plus easy exchange for your old appliance.
+              Brand new LG, Samsung, Bosch & Daikin appliances with full manufacturer warranty, plus easy exchange for your old appliance.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-xl mx-auto pt-2 text-xs font-bold text-stone-800">
