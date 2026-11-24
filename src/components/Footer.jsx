@@ -162,11 +162,7 @@ export default function Footer() {
       <div className="border-t border-stone-200 bg-stone-200/60 pt-6 pb-24 sm:pb-6 px-4 text-center text-xs text-stone-700">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-3">
           <p>© {new Date().getFullYear()} Smart Touch Appliances (www.smarttouchappliances.com). All rights reserved.</p>
-          <p className="flex items-center gap-3 text-stone-700">
-            <span>Direct Hotline: <strong className="text-amber-700">+91 99162 07964</strong></span>
-            <span>•</span>
-            <span>Doorstep Service • Inspect • Estimate • Repair</span>
-          </p>
+          <p className="text-stone-700">Doorstep Service • Inspect • Estimate • Repair</p>
         </div>
       </div>
     </footer>

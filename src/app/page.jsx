@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Phone, ShieldCheck, CheckCircle2, Wrench, Clock, Award, Star, Zap, ChevronRight, HelpCircle, Truck, Sparkles, MapPin } from 'lucide-react';
+import { Phone, CheckCircle2, Award, ChevronRight } from 'lucide-react';
 import HeroImage from '@/components/HeroImage';
 import AreaCheckerWidget from '@/components/AreaCheckerWidget';
 import HowWeWork from '@/components/HowWeWork';
@@ -17,8 +17,6 @@ export default function HomePage() {
       icon: '🧺',
       sub: 'Front Load • Top Load • Semi-Automatic',
       desc: 'Expert doorstep diagnosis for motor failure, drum noise, water leaks, and PCB circuit faults across all major brands with genuine OEM parts.',
-      price: 'Inspection ₹200',
-      warranty: '365 Days Warranty After Repair',
       href: '/services/washing-machine',
       highlights: ['Motor & Spinning Failure Fix', 'PCB Electronic Board Repair', 'Drum Descaling & Leak Seal']
     },
@@ -27,8 +25,6 @@ export default function HomePage() {
       icon: '🧊',
       sub: 'Single Door • Frost Free • Side-by-Side',
       desc: 'Doorstep repair for cooling loss, compressor clicking sound, thermostat defects, and Freon gas refilling.',
-      price: 'Inspection ₹200',
-      warranty: '365 Days Warranty After Repair',
       href: '/services/refrigerator',
       highlights: ['Compressor Repair & Overhaul', 'Freon R600a Gas Charging', 'Defrost Timer & Sensor Fix']
     },
@@ -37,8 +33,6 @@ export default function HomePage() {
       icon: '❄️',
       sub: 'Split AC • Window AC • Inverter PCB',
       desc: 'High-pressure foam jet cleaning, indoor water dripping fix, copper pipe leak soldering, and eco-friendly gas recharge for peak cooling.',
-      price: 'Inspection ₹200',
-      warranty: '365 Days Warranty After Repair',
       href: '/services/ac-service',
       highlights: ['Foam Jet Pressure Service', 'Gas Leakage Testing & Refill', 'Inverter PCB Board Repair']
     },
@@ -47,8 +41,6 @@ export default function HomePage() {
       icon: '🍲',
       sub: 'Solo • Grill • Convection Ovens',
       desc: 'Quick repair for magnetron heating issues, unresponsive touchpads, internal sparks, and turntable motor failures.',
-      price: 'Inspection ₹200',
-      warranty: '365 Days Warranty After Repair',
       href: '/services/microwave',
       highlights: ['Magnetron Heating Fix', 'NeoChef Touchpad Panels', 'Sparking Mica Sheet Replacement']
     }
@@ -62,12 +54,6 @@ export default function HomePage() {
     { label: 'Dryer', icon: '♨️', href: '/services/dryer' },
   ];
 
-  const whyChooseUs = [
-    { title: 'Doorstep Service', desc: 'We come to your home anywhere in Bangalore. No need to carry your appliance anywhere.' },
-    { title: '365 Days Warranty', desc: 'Every repair is backed by a 365-day warranty, using original manufacturer parts.' },
-    { title: 'Estimate Before Work', desc: 'Flat ₹200 inspection charge, and a clear estimate is given before we take up any work.' },
-    { title: 'All Major Brands', desc: 'We repair LG, Samsung, Whirlpool, Bosch, IFB and other major brands.' }
-  ];
 
   return (
     <div className="space-y-10 sm:space-y-16 pb-12 sm:pb-16 pt-4 sm:pt-8 bg-white text-stone-900">
@@ -153,19 +139,14 @@ export default function HomePage() {
         <div className="text-center max-w-3xl mx-auto space-y-2">
           <span className="text-xs font-bold text-sky-700 uppercase tracking-wider">Expert Doorstep Solutions</span>
           <h2 className="text-2xl sm:text-4xl font-black text-stone-900">Doorstep Appliance Repair Services</h2>
-          <p className="text-stone-700 text-sm">Our technician comes to your home and repairs the appliance there.</p>
+          <p className="text-stone-700 text-sm">We repair LG, Samsung, Whirlpool, Bosch, IFB and other major brands.</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {mainServices.map((item, idx) => (
             <div key={idx} className="glass-card glass-card-hover rounded-2xl sm:rounded-3xl p-5 sm:p-8 border border-stone-200 bg-white flex flex-col justify-between space-y-6">
               <div className="space-y-4">
-                <div className="flex items-center justify-between">
-                  <span className="text-4xl">{item.icon}</span>
-                  <span className="bg-sky-100 text-sky-900 border border-sky-300 font-extrabold text-xs px-3 py-1 rounded-full">
-                    {item.price}
-                  </span>
-                </div>
+                <span className="text-4xl block">{item.icon}</span>
 
                 <div>
                   <h3 className="text-2xl font-bold text-stone-900">{item.title}</h3>
@@ -187,11 +168,7 @@ export default function HomePage() {
                 </div>
               </div>
 
-              <div className="pt-4 border-t border-stone-200 flex flex-col sm:flex-row items-center justify-between gap-4">
-                <span className="text-xs text-emerald-700 font-bold flex items-center gap-1">
-                  <ShieldCheck className="w-4 h-4" /> {item.warranty}
-                </span>
-
+              <div className="pt-4 border-t border-stone-200 flex justify-end">
                 <Link
                   href={item.href}
                   className="btn-blue-primary w-full sm:w-auto px-6 py-2.5 text-xs font-bold flex items-center justify-center gap-2"
@@ -208,53 +185,6 @@ export default function HomePage() {
       {/* Locality Coverage Checker Widget */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6">
         <AreaCheckerWidget />
-      </section>
-
-
-      {/* Why Choose Smart Touch Section */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 space-y-8">
-        <div className="text-center max-w-2xl mx-auto space-y-2">
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-stone-900">Why Customers Trust Smart Touch Appliances</h2>
-          <p className="text-stone-700 text-sm">Doorstep service with simple, clear pricing.</p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {whyChooseUs.map((item, idx) => (
-            <div key={idx} className="glass-card p-6 rounded-2xl border border-stone-200 bg-white space-y-2">
-              <div className="w-10 h-10 rounded-xl bg-sky-100 border border-sky-200 text-sky-800 flex items-center justify-center font-bold text-lg">
-                {idx + 1}
-              </div>
-              <h3 className="text-base font-bold text-stone-900">{item.title}</h3>
-              <p className="text-stone-700 text-sm leading-relaxed">{item.desc}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Bottom Call to Action Banner */}
-      <section data-track="bottom_cta" className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-        <div className="glass-card p-8 sm:p-10 rounded-3xl border border-sky-200 bg-sky-50 space-y-4">
-          <h3 className="text-2xl sm:text-3xl font-bold text-stone-900">Need Doorstep Appliance Repair?</h3>
-          <p className="text-stone-700 text-sm">Call or WhatsApp us to book a technician visit at your home in Bangalore.</p>
-          <div className="flex flex-col sm:flex-row justify-center items-stretch sm:items-center gap-3 pt-2">
-            <a
-              href="tel:+919916207964"
-              className="btn-blue-primary w-full sm:w-auto px-8 py-3.5 text-sm font-extrabold flex items-center justify-center gap-2"
-            >
-              <Phone className="w-4 h-4 fill-white" />
-              <span>Call +91 99162 07964</span>
-            </a>
-            <a
-              href="https://wa.me/919916207964?text=Hi%20Smart%20Touch%20Appliances,%20I%20need%20a%20technician"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-emerald-700 hover:bg-emerald-800 text-white font-extrabold w-full sm:w-auto px-8 py-3.5 rounded-full flex items-center justify-center gap-2 text-sm transition-colors"
-            >
-              <WhatsAppIcon className="w-4 h-4" />
-              <span>WhatsApp Booking</span>
-            </a>
-          </div>
-        </div>
       </section>
     </div>
   );
