@@ -38,6 +38,11 @@ export default function Analytics() {
         page_path: window.location.pathname,
         transport_type: 'beacon', // still sends if the phone app or WhatsApp opens immediately
       });
+      // Contact intent only; call duration and confirmed bookings are separate conversions.
+      window.gtag('event', 'conversion', {
+        send_to: 'AW-18595410114/Zv80COSO_sAdEMLh_aJF',
+        transport_type: 'beacon',
+      });
     };
     document.addEventListener('click', onClick, { capture: true });
     return () => document.removeEventListener('click', onClick, { capture: true });
@@ -56,6 +61,7 @@ export default function Analytics() {
           window.gtag = gtag;
           gtag('js', new Date());
           gtag('config', '${GA_MEASUREMENT_ID}');
+          gtag('config', 'AW-18595410114');
         `}
       </Script>
     </>
