@@ -47,6 +47,7 @@ export default function Analytics() {
 
   return (
     <>
+      <Script async src="https://www.googletagmanager.com/gtm.js?id=GTM-NPCRMFPJ" strategy="afterInteractive" />
       <Script src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`} strategy="afterInteractive" />
       <Script id="ga4-init" strategy="afterInteractive">
         {`
